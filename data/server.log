@@ -1,0 +1,104 @@
+[Fri, 10 Jun 2022 07:37:43 GMT] [INFO]: Starting server...
+[Fri, 10 Jun 2022 07:37:43 GMT] [INFO]: Server started
+[Fri, 10 Jun 2022 07:37:47 GMT] [INFO]: 127.0.0.1 connected
+[Fri, 10 Jun 2022 07:37:54 GMT] [REQUEST]: 127.0.0.1 executed ["signup","user1","pass1"]
+[Fri, 10 Jun 2022 07:37:54 GMT] [RESPONSE]: 127.0.0.1 response {"status":406,"comment":"Username taken","content":{}}
+[Fri, 10 Jun 2022 07:38:13 GMT] [REQUEST]: 127.0.0.1 executed ["signup","user2","pass2"]
+[Fri, 10 Jun 2022 07:38:13 GMT] [RESPONSE]: 127.0.0.1 response {"status":406,"comment":"Username taken","content":{}}
+[Fri, 10 Jun 2022 07:38:21 GMT] [REQUEST]: 127.0.0.1 executed ["signup","user3","pass3"]
+[Fri, 10 Jun 2022 07:38:21 GMT] [RESPONSE]: user3 response {"status":201,"comment":"","content":{}}
+[Fri, 10 Jun 2022 07:38:33 GMT] [REQUEST]: user3 executed ["login","user3","pass3"]
+[Fri, 10 Jun 2022 07:38:33 GMT] [RESPONSE]: user3 response {"status":400,"comment":"","content":{}}
+[Fri, 10 Jun 2022 07:38:51 GMT] [INFO]: user3 disconnected
+[Fri, 10 Jun 2022 07:38:58 GMT] [INFO]: Server stopped
+[Fri, 10 Jun 2022 17:47:14 GMT] [INFO]: Starting server...
+[Fri, 10 Jun 2022 17:47:14 GMT] [INFO]: Server started
+[Fri, 10 Jun 2022 17:47:17 GMT] [INFO]: 127.0.0.1 connected
+[Fri, 10 Jun 2022 17:47:23 GMT] [REQUEST]: 127.0.0.1 executed ["login","user1","pass1"]
+[Fri, 10 Jun 2022 17:47:23 GMT] [RESPONSE]: user1 response {"status":202,"comment":"","content":{}}
+[Fri, 10 Jun 2022 17:47:26 GMT] [REQUEST]: user1 executed ["list"]
+[Fri, 10 Jun 2022 17:47:26 GMT] [RESPONSE]: user1 response {"status":400,"comment":"","content":{}}
+[Fri, 10 Jun 2022 17:47:29 GMT] [REQUEST]: user1 executed ["list conversations"]
+[Fri, 10 Jun 2022 17:47:29 GMT] [RESPONSE]: user1 response {"status":400,"comment":"","content":{}}
+[Fri, 10 Jun 2022 17:47:45 GMT] [REQUEST]: user1 executed ["list","conversations"]
+[Fri, 10 Jun 2022 17:48:15 GMT] [INFO]: Starting server...
+[Fri, 10 Jun 2022 17:48:15 GMT] [INFO]: Server started
+[Fri, 10 Jun 2022 17:48:16 GMT] [INFO]: 127.0.0.1 connected
+[Fri, 10 Jun 2022 17:48:21 GMT] [REQUEST]: 127.0.0.1 executed ["login","user1","pass1"]
+[Fri, 10 Jun 2022 17:48:21 GMT] [RESPONSE]: user1 response {"status":202,"comment":"","content":{}}
+[Fri, 10 Jun 2022 17:50:37 GMT] [REQUEST]: user1 executed ["list","conversations"]
+[Fri, 10 Jun 2022 17:51:14 GMT] [INFO]: Starting server...
+[Fri, 10 Jun 2022 17:51:14 GMT] [INFO]: Server started
+[Fri, 10 Jun 2022 17:51:15 GMT] [INFO]: 127.0.0.1 connected
+[Fri, 10 Jun 2022 17:51:19 GMT] [REQUEST]: 127.0.0.1 executed ["login","user1","pass1"]
+[Fri, 10 Jun 2022 17:51:19 GMT] [RESPONSE]: user1 response {"status":202,"comment":"","content":{}}
+[Fri, 10 Jun 2022 17:51:22 GMT] [REQUEST]: user1 executed ["list","conversations"]
+[Fri, 10 Jun 2022 17:52:02 GMT] [INFO]: Starting server...
+[Fri, 10 Jun 2022 17:52:02 GMT] [INFO]: Server started
+[Fri, 10 Jun 2022 17:52:03 GMT] [INFO]: 127.0.0.1 connected
+[Fri, 10 Jun 2022 17:52:08 GMT] [REQUEST]: 127.0.0.1 executed ["login","user1","pass1"]
+[Fri, 10 Jun 2022 17:52:08 GMT] [RESPONSE]: user1 response {"status":202,"comment":"","content":{}}
+[Fri, 10 Jun 2022 17:52:12 GMT] [REQUEST]: user1 executed ["list","conversations"]
+[Fri, 10 Jun 2022 17:52:13 GMT] [RESPONSE]: user1 response {"status":200,"comment":"","content":{"conversations":[{"id":0,"unread":false,"users":["user1","user2"]},{"id":1,"unread":false,"users":["user1","user3"]}]}}
+[Fri, 10 Jun 2022 17:53:17 GMT] [INFO]: Server stopped
+[Fri, 10 Jun 2022 17:53:20 GMT] [INFO]: Starting server...
+[Fri, 10 Jun 2022 17:53:20 GMT] [INFO]: Server started
+[Fri, 10 Jun 2022 17:53:21 GMT] [INFO]: 127.0.0.1 connected
+[Fri, 10 Jun 2022 17:53:25 GMT] [REQUEST]: 127.0.0.1 executed ["login","user1","pass1"]
+[Fri, 10 Jun 2022 17:53:25 GMT] [RESPONSE]: user1 response {"status":202,"comment":"","content":{}}
+[Fri, 10 Jun 2022 17:53:29 GMT] [REQUEST]: user1 executed ["list","conversations"]
+[Fri, 10 Jun 2022 17:53:29 GMT] [RESPONSE]: user1 response {"status":200,"comment":"","content":{"conversations":[{"id":0,"unread":false,"users":["user1","user2"]},{"id":1,"unread":false,"users":["user1","user3"]}]}}
+[Fri, 10 Jun 2022 17:54:50 GMT] [INFO]: Server stopped
+[Fri, 10 Jun 2022 17:54:52 GMT] [INFO]: Starting server...
+[Fri, 10 Jun 2022 17:54:52 GMT] [INFO]: Server started
+[Fri, 10 Jun 2022 17:54:53 GMT] [INFO]: 127.0.0.1 connected
+[Fri, 10 Jun 2022 17:54:58 GMT] [REQUEST]: 127.0.0.1 executed ["login","user1","pass1"]
+[Fri, 10 Jun 2022 17:54:58 GMT] [RESPONSE]: user1 response {"status":202,"comment":"","content":{}}
+[Fri, 10 Jun 2022 17:55:01 GMT] [REQUEST]: user1 executed ["list","conversations"]
+[Fri, 10 Jun 2022 17:55:01 GMT] [RESPONSE]: user1 response {"status":200,"comment":"","content":{"conversations":[{"id":0,"unread":false,"users":["user1","user2"]},{"id":1,"unread":false,"users":["user1","user3"]}]}}
+[Fri, 10 Jun 2022 17:55:11 GMT] [INFO]: user1 disconnected
+[Fri, 10 Jun 2022 17:55:14 GMT] [INFO]: 127.0.0.1 connected
+[Fri, 10 Jun 2022 17:55:19 GMT] [REQUEST]: 127.0.0.1 executed ["login","user2","pass2"]
+[Fri, 10 Jun 2022 17:55:19 GMT] [RESPONSE]: user2 response {"status":202,"comment":"","content":{}}
+[Fri, 10 Jun 2022 17:55:22 GMT] [REQUEST]: user2 executed ["list","conversations"]
+[Fri, 10 Jun 2022 17:55:22 GMT] [RESPONSE]: user2 response {"status":200,"comment":"","content":{"conversations":[{"id":0,"unread":false,"users":["user1","user2"]}]}}
+[Fri, 10 Jun 2022 17:55:29 GMT] [INFO]: user2 disconnected
+[Fri, 10 Jun 2022 17:55:30 GMT] [INFO]: Server stopped
+[Fri, 10 Jun 2022 18:19:42 GMT] [INFO]: Starting server...
+[Fri, 10 Jun 2022 18:19:42 GMT] [INFO]: Server started
+[Fri, 10 Jun 2022 18:20:08 GMT] [INFO]: 127.0.0.1 connected
+[Fri, 10 Jun 2022 18:20:19 GMT] [REQUEST]: 127.0.0.1 executed ["login","user1","pass1"]
+[Fri, 10 Jun 2022 18:20:19 GMT] [RESPONSE]: user1 response {"status":202,"comment":"","content":{}}
+[Fri, 10 Jun 2022 18:20:41 GMT] [REQUEST]: user1 executed ["list","conversations"]
+[Fri, 10 Jun 2022 18:20:41 GMT] [RESPONSE]: user1 response {"status":200,"comment":"","content":{"conversations":[{"id":0,"unread":false,"users":["user1","user2"]},{"id":1,"unread":false,"users":["user1","user3"]}]}}
+[Fri, 10 Jun 2022 18:21:22 GMT] [INFO]: user1 disconnected
+[Fri, 10 Jun 2022 18:21:48 GMT] [INFO]: Starting server...
+[Fri, 10 Jun 2022 18:21:51 GMT] [INFO]: Server stopped
+[Fri, 10 Jun 2022 18:21:55 GMT] [INFO]: Starting server...
+[Fri, 10 Jun 2022 18:21:55 GMT] [INFO]: Server started
+[Fri, 10 Jun 2022 18:21:57 GMT] [INFO]: Server stopped
+[Fri, 10 Jun 2022 18:24:54 GMT] [INFO]: Starting server...
+[Fri, 10 Jun 2022 18:24:54 GMT] [INFO]: Server started
+[Fri, 10 Jun 2022 18:25:14 GMT] [INFO]: 127.0.0.1 connected
+[Fri, 10 Jun 2022 18:25:31 GMT] [REQUEST]: 127.0.0.1 executed ["login","user1","pass1"]
+[Fri, 10 Jun 2022 18:25:31 GMT] [RESPONSE]: user1 response {"status":202,"comment":"","content":{}}
+[Fri, 10 Jun 2022 18:25:39 GMT] [REQUEST]: user1 executed ["list"]
+[Fri, 10 Jun 2022 18:25:39 GMT] [RESPONSE]: user1 response {"status":400,"comment":"","content":{}}
+[Fri, 10 Jun 2022 18:25:43 GMT] [REQUEST]: user1 executed ["list","conversations"]
+[Fri, 10 Jun 2022 18:25:43 GMT] [RESPONSE]: user1 response {"status":200,"comment":"","content":{"conversations":[{"id":0,"unread":false,"users":["user1","user2"]},{"id":1,"unread":false,"users":["user1","user3"]}]}}
+[Fri, 10 Jun 2022 18:27:16 GMT] [INFO]: user1 disconnected
+[Fri, 10 Jun 2022 18:27:16 GMT] [INFO]: 127.0.0.1 connected
+[Fri, 10 Jun 2022 18:27:22 GMT] [REQUEST]: 127.0.0.1 executed ["signup"]
+[Fri, 10 Jun 2022 18:27:22 GMT] [RESPONSE]: 127.0.0.1 response {"status":400,"comment":"","content":{}}
+[Fri, 10 Jun 2022 18:27:28 GMT] [REQUEST]: 127.0.0.1 executed ["signup","user1","pass1"]
+[Fri, 10 Jun 2022 18:27:28 GMT] [RESPONSE]: 127.0.0.1 response {"status":406,"comment":"Username taken","content":{}}
+[Fri, 10 Jun 2022 18:28:43 GMT] [REQUEST]: 127.0.0.1 executed ["signup","  ","afsdf"]
+[Fri, 10 Jun 2022 18:28:43 GMT] [RESPONSE]: 127.0.0.1 response {"status":406,"comment":"Empty username","content":{}}
+[Fri, 10 Jun 2022 18:28:59 GMT] [REQUEST]: 127.0.0.1 executed ["login","user2","pass2"]
+[Fri, 10 Jun 2022 18:28:59 GMT] [RESPONSE]: user2 response {"status":202,"comment":"","content":{}}
+[Fri, 10 Jun 2022 18:29:13 GMT] [REQUEST]: user2 executed ["login","user3","pass3"]
+[Fri, 10 Jun 2022 18:29:13 GMT] [RESPONSE]: user2 response {"status":400,"comment":"","content":{}}
+[Fri, 10 Jun 2022 18:29:44 GMT] [REQUEST]: user2 executed ["list","conversations"]
+[Fri, 10 Jun 2022 18:29:44 GMT] [RESPONSE]: user2 response {"status":200,"comment":"","content":{"conversations":[{"id":0,"unread":false,"users":["user1","user2"]}]}}
+[Fri, 10 Jun 2022 18:30:14 GMT] [INFO]: user2 disconnected
+[Fri, 10 Jun 2022 18:30:18 GMT] [INFO]: Server stopped
