@@ -108,7 +108,13 @@ server.on("connection", (socket) => {
                         respond(socket, { "status": 400, "comment": "", "content": {} });
                     }
                 } else if (args[0] == "message") {
-                    // read
+                    const c = {
+                        "username": [ [ instance.username ], [ true ] ]
+                    }
+                    const unread = database.execute(".|'info'|'accounts'|" + JSON.stringify(c))[0].unread.includes(parseInt(args[1]));
+                    if (unread) {
+                        read(instance, args[1]);
+                    }
                     const message = {
                         "id": null,
                         "time": new Date().toUTCString(),
@@ -130,47 +136,16 @@ server.on("connection", (socket) => {
                         database.execute("+|'conversations'|'" + args[1] + "'|" + JSON.stringify(message));
                         fs.appendFileSync(__dirname + "/data/conversations/" + args[1] + ".log", "[" + message.time + "] [" + message.id + "] [" + message.executor + "] [" + message.action + "] [" + message.target + "]: " + message.content + "\n");
                         respond(socket, { "status": 200, "comment": "", "content": {} });
-                        const cond = {
-                            "id": [ [ args[1] ], [ true ] ]
-                        }
-                        const members = database.execute(".|'info'|'conversation-data'|" + JSON.stringify(cond))[0].users;
-                        const recipients = remove(members, instance.username);
-                        let notifications = [];
-                        recipients.forEach(recipient => {
-                            const notification = {
-                                "recipient": recipient,
-                                "event": message
-                            }
-                            notifications.push(notification);
-                            const condition = {
-                                "username": [ [ recipient ], [ true ] ]
-                            }
-                            let unreads = database.execute(".|'info'|'accounts'|" + JSON.stringify(condition))[0].unread;
-                            if (!unreads.includes(args[1])) {
-                                unreads.push(parseInt(args[1]));
-                                const set = {
-                                    "unread": unreads
-                                }
-                                database.execute("^|'info'|'accounts'|" + JSON.stringify(set) + "|" + JSON.stringify(condition));
-                            }
-                        });
-                        notifications.forEach(notification => {
-                            let sent = false;
-                            instances.forEach(element => {
-                                if (notification.recipient == element.username) {
-                                    respond(element.socket, { "status": 103, "comment": "Notification", "content": notification.event });
-                                    sent = true;
-                                }
-                            });
-                            if (sent) {
-                                notifications = remove(notifications, notification);
-                            }
-                        });
-                        notifications.forEach(unsent => {
-                            database.execute("+|'info'|'outgoing'|" + JSON.stringify(unsent));
-                        });
+                        notify(instance, args[1], message, true);
                     } catch {
                         respond(socket, { "status": 404, "comment": "Conversation not found", "content": {} });
+                    }
+                } else if (args[0] == "read") {
+                    if (args.length == 2) {
+                        read(instance, args[1]);
+                        respond(socket, { "status": 200, "comment": "", "content": {} });
+                    } else {
+                        respond(socket, { "status": 400, "comment": "", "content": {} });
                     }
                 } else {
                     respond(socket, { "status": 400, "comment": "", "content": {} });
@@ -303,4 +278,86 @@ function remove(array, value) {
         }
     });
     return result;
+}
+
+function notify(instance, conversationID, message, markUnread) {
+    const cond = {
+        "id": [ [ conversationID ], [ true ] ]
+    }
+    const members = database.execute(".|'info'|'conversation-data'|" + JSON.stringify(cond))[0].users;
+    const recipients = remove(members, instance.username);
+    let notifications = [];
+    recipients.forEach(recipient => {
+        const notification = {
+            "recipient": recipient,
+            "event": message
+        }
+        notifications.push(notification);
+        const condition = {
+            "username": [ [ recipient ], [ true ] ]
+        }
+        if (markUnread) {
+            let unreads = database.execute(".|'info'|'accounts'|" + JSON.stringify(condition))[0].unread;
+            if (!unreads.includes(parseInt(conversationID))) {
+                unreads.push(parseInt(conversationID));
+                const set = {
+                    "unread": unreads
+                }
+                database.execute("^|'info'|'accounts'|" + JSON.stringify(set) + "|" + JSON.stringify(condition));
+            }
+        }
+    });
+    notifications.forEach(notification => {
+        let sent = false;
+        instances.forEach(element => {
+            if (notification.recipient == element.username) {
+                respond(element.socket, { "status": 103, "comment": "Notification", "content": notification.event });
+                sent = true;
+            }
+        });
+        if (sent) {
+            notifications = remove(notifications, notification);
+        }
+    });
+    notifications.forEach(unsent => {
+        database.execute("+|'info'|'outgoing'|" + JSON.stringify(unsent));
+    });
+}
+
+function read(instance, conversationID) {
+    const message = {
+        "id": null,
+        "time": new Date().toUTCString(),
+        "executor": instance.username,
+        "action": "READ",
+        "target": null,
+        "content": null
+    }
+    try {
+        const conversation = database.execute(".|'conversations'|'" + conversationID + "'");
+        let id;
+        try {
+            id = conversation[conversation.length - 1].id + 1;
+        } catch {
+            id = 0;
+        }
+        message.id = id;
+        message.target = id - 1;
+        database.execute("+|'conversations'|'" + conversationID + "'|" + JSON.stringify(message));
+        fs.appendFileSync(__dirname + "/data/conversations/" + conversationID + ".log", "[" + message.time + "] [" + message.id + "] [" + message.executor + "] [" + message.action + "] [" + message.target + "]: " + message.content + "\n");
+        notify(instance, conversationID, message, false);
+        const condition = {
+            "username": [ [ instance.username ], [ true ] ]
+        }
+        let unreads = database.execute(".|'info'|'accounts'|" + JSON.stringify(condition))[0].unread;
+        if (!unreads.includes(conversationID)) {
+            unreads = remove(unreads, conversationID);
+            const set = {
+                "unread": unreads
+            }
+            database.execute("^|'info'|'accounts'|" + JSON.stringify(set) + "|" + JSON.stringify(condition));
+        }
+    } catch {
+        respond(socket, { "status": 404, "comment": "Conversation not found", "content": {} });
+    }
 }

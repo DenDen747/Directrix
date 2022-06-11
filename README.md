@@ -12,3 +12,5 @@
    - Lists all messages in a conversation
 - ``message <id> <content>``
   - Sends a message to the conversation
+- ``read <id>``
+  - Reads a conversation
