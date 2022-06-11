@@ -7,5 +7,6 @@
   "conversation-data": [
     { "id": 0, "users": ["user1", "user2"] },
     { "id": 1, "users": ["user1", "user3"] }
-  ]
+  ],
+  "outgoing": []
 }

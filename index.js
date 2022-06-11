@@ -1,3 +1,4 @@
+const fs = require("fs");
 const jSQL = require("jsql");
 const net = require("net");
 const { send } = require("process");
@@ -5,7 +6,7 @@ const logger = require("./logger");
 
 const database = new jSQL.Database(__dirname + "/data/database");
 
-const instances = [];
+let instances = [];
 
 logger.log("INFO", "Starting server...");
 
@@ -30,6 +31,7 @@ server.on("connection", (socket) => {
         } else {
             logger.log("INFO", socket.address().address + " disconnected");
         }
+        instances = remove(instances, instance);
     });
 
     socket.on("data", (data) => {
@@ -42,7 +44,7 @@ server.on("connection", (socket) => {
                 }
             });
             if (instance) {
-                logger.log("REQUEST", instance.username + " executed " + JSON.stringify(args));
+                logger.log("INCOMING", instance.username + " executed " + JSON.stringify(args));
                 if (args[0] == "list") {
                     if (args[1] == "conversations") {
                         if (args.length == 2) {
@@ -71,18 +73,110 @@ server.on("connection", (socket) => {
                         }
                     } else if (args[1] == "messages") {
                         if (args.length == 3) {
-
+                            try {
+                                const conversation = database.execute(".|'conversations'|'" + args[2] + "'");
+                                const matching = [];
+                                for (let i = conversation.length - 1; i >= 0; i--) {
+                                    matching.push(conversation[i]);
+                                }
+                                respond(socket, { "status": 400, "comment": "", "content": { "messages": matching } });
+                            } catch {
+                                respond(socket, { "status": 404, "comment": "Conversation not found", "content": {} });
+                            }
+                        } else if (args.length == 4) {
+                            try {
+                                const conversation = database.execute(".|'conversations'|'" + args[2] + "'");
+                                const matching = [];
+                                let addedMessages = 0;
+                                for (let i = conversation.length - 1; i >= 0; i--) {
+                                    matching.push(conversation[i]);
+                                    if (conversation[i].action == "MESSAGE") {
+                                        addedMessages++;
+                                    }
+                                    if (addedMessages >= 10 * args[3]) {
+                                        break;
+                                    }
+                                }
+                                respond(socket, { "status": 400, "comment": "", "content": { "messages": matching } });
+                            } catch {
+                                respond(socket, { "status": 404, "comment": "Conversation not found", "content": {} });
+                            }
                         } else {
                             respond(socket, { "status": 400, "comment": "", "content": {} });
                         }
                     } else {
                         respond(socket, { "status": 400, "comment": "", "content": {} });
                     }
+                } else if (args[0] == "message") {
+                    // read
+                    const message = {
+                        "id": null,
+                        "time": new Date().toUTCString(),
+                        "executor": instance.username,
+                        "action": "MESSAGE",
+                        "target": null,
+                        "content": args[2]
+                    }
+                    try {
+                        const conversation = database.execute(".|'conversations'|'" + args[1] + "'");
+                        let id;
+                        try {
+                            id = conversation[conversation.length - 1].id + 1;
+                        } catch {
+                            id = 0;
+                        }
+                        message.id = id;
+                        message.target = id;
+                        database.execute("+|'conversations'|'" + args[1] + "'|" + JSON.stringify(message));
+                        fs.appendFileSync(__dirname + "/data/conversations/" + args[1] + ".log", "[" + message.time + "] [" + message.id + "] [" + message.executor + "] [" + message.action + "] [" + message.target + "]: " + message.content + "\n");
+                        respond(socket, { "status": 200, "comment": "", "content": {} });
+                        const cond = {
+                            "id": [ [ args[1] ], [ true ] ]
+                        }
+                        const members = database.execute(".|'info'|'conversation-data'|" + JSON.stringify(cond))[0].users;
+                        const recipients = remove(members, instance.username);
+                        let notifications = [];
+                        recipients.forEach(recipient => {
+                            const notification = {
+                                "recipient": recipient,
+                                "event": message
+                            }
+                            notifications.push(notification);
+                            const condition = {
+                                "username": [ [ recipient ], [ true ] ]
+                            }
+                            let unreads = database.execute(".|'info'|'accounts'|" + JSON.stringify(condition))[0].unread;
+                            if (!unreads.includes(args[1])) {
+                                unreads.push(parseInt(args[1]));
+                                const set = {
+                                    "unread": unreads
+                                }
+                                database.execute("^|'info'|'accounts'|" + JSON.stringify(set) + "|" + JSON.stringify(condition));
+                            }
+                        });
+                        notifications.forEach(notification => {
+                            let sent = false;
+                            instances.forEach(element => {
+                                if (notification.recipient == element.username) {
+                                    respond(element.socket, { "status": 103, "comment": "Notification", "content": notification.event });
+                                    sent = true;
+                                }
+                            });
+                            if (sent) {
+                                notifications = remove(notifications, notification);
+                            }
+                        });
+                        notifications.forEach(unsent => {
+                            database.execute("+|'info'|'outgoing'|" + JSON.stringify(unsent));
+                        });
+                    } catch {
+                        respond(socket, { "status": 404, "comment": "Conversation not found", "content": {} });
+                    }
                 } else {
                     respond(socket, { "status": 400, "comment": "", "content": {} });
                 }
             } else {
-                logger.log("REQUEST", socket.address().address + " executed " + JSON.stringify(args));
+                logger.log("INCOMING", socket.address().address + " executed " + JSON.stringify(args));
                 if (args[0] == "signup") {
                     if (args.length == 3) {
                         const condition = {
@@ -100,11 +194,6 @@ server.on("connection", (socket) => {
                                 "unread": []
                             }
                             database.execute("+|'info'|'accounts'|" + JSON.stringify(account));
-                            const newInstance = {
-                                "username": args[1],
-                                "socket": socket
-                            }
-                            instances.push(newInstance);
                             respond(socket, { "status": 201, "comment": "", "content": {} });
                         }
                     } else {
@@ -126,6 +215,17 @@ server.on("connection", (socket) => {
                             }
                             instances.push(newInstance);
                             respond(socket, { "status": 202, "comment": "", "content": {} });
+                            const condition = {
+                                "recipient": [ [ newInstance.username ], [ true ] ]
+                            }
+                            const notifications = database.execute(".|'info'|'outgoing'|" + JSON.stringify(condition));
+                            notifications.forEach(notification => {
+                                respond(newInstance.socket, { "status": 103, "comment": "Notification", "content": notification.event });
+                            });
+                            const cond = {
+                                "recipient": [ [ args[1] ], [ true ] ]
+                            }
+                            database.execute("-|'info'|'outgoing'|" + JSON.stringify(cond));
                         } else {
                             respond(socket, { "status": 401, "comment": "", "content": {} });
                         }
@@ -150,17 +250,25 @@ process.on("SIGINT", () => {
 });
 
 function respond(socket, data) {
-    socket.write(JSON.stringify(data));
-    let instance;
-    instances.forEach(element => {
-        if (element.socket === socket) {
-            instance = element;
+    try {
+        socket.write(JSON.stringify(data));
+        let instance;
+        instances.forEach(element => {
+            if (element.socket === socket) {
+                instance = element;
+            }
+        });
+        if (instance) {
+            logger.log("OUTGOING", instance.username + " response " + JSON.stringify(data));
+        } else {
+            logger.log("OUTGOING", socket.address().address + " response " + JSON.stringify(data));
         }
-    });
-    if (instance) {
-        logger.log("RESPONSE", instance.username + " response " + JSON.stringify(data));
-    } else {
-        logger.log("RESPONSE", socket.address().address + " response " + JSON.stringify(data));
+    } catch {
+        instances.forEach(element => {
+            if (element.socket == socket) {
+                instances = remove(instances, element);
+            }
+        });
     }
 }
 
@@ -185,4 +293,14 @@ function is_empty(x)
               ||
         (/^\s*$/.test(x))
     );
+}
+
+function remove(array, value) {
+    let result = [];
+    array.forEach(element => {
+        if (element != value) {
+            result.push(element);
+        }
+    });
+    return result;
 }
