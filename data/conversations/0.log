@@ -1,0 +1,14 @@
+[Sat, 11 Jun 2022 19:52:31 GMT] [0] [user1] [MESSAGE] [0]: test
+[Sat, 11 Jun 2022 19:53:05 GMT] [1] [user1] [MESSAGE] [1]: test
+[Sat, 11 Jun 2022 19:54:02 GMT] [2] [user1] [MESSAGE] [2]: test
+[Sat, 11 Jun 2022 19:54:15 GMT] [3] [user2] [MESSAGE] [3]: hi
+[Sat, 11 Jun 2022 20:13:25 GMT] [4] [user1] [READ] [3]: null
+[Sat, 11 Jun 2022 20:13:25 GMT] [5] [user1] [MESSAGE] [5]: hey
+[Sat, 11 Jun 2022 20:14:01 GMT] [6] [user2] [READ] [5]: null
+[Sat, 11 Jun 2022 20:14:15 GMT] [7] [user2] [READ] [6]: null
+[Sat, 11 Jun 2022 20:14:16 GMT] [8] [user2] [MESSAGE] [8]: hi
+[Sat, 11 Jun 2022 21:49:58 GMT] [9] [user1] [MESSAGE] [9]: hello
+[Sat, 11 Jun 2022 21:50:35 GMT] [10] [user2] [READ] [9]: null
+[Sat, 11 Jun 2022 21:51:48 GMT] [11] [user2] [MESSAGE] [11]: hi
+[Sat, 11 Jun 2022 21:52:01 GMT] [12] [user1] [READ] [11]: null
+[Sat, 11 Jun 2022 21:52:01 GMT] [13] [user1] [MESSAGE] [13]: what's up
