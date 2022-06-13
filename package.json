@@ -1,0 +1,22 @@
+{
+  "name": "directrix",
+  "version": "1.0.0",
+  "description": "## Commands",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DenDen747/Directrix.git"
+  },
+  "author": "Denes Garda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DenDen747/Directrix/issues"
+  },
+  "homepage": "https://github.com/DenDen747/Directrix#readme",
+  "devDependencies": {
+    "jsql": "github:DenDen747/jsql"
+  }
+}

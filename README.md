@@ -2,15 +2,15 @@
 
 ## Commands
 
- - ``login <username> <password>``
+- ``login <username> <password>``
    - Logs in to the server
-   - ``<status>``
- - ``signup <username> <password>``
+- ``signup <username> <password>``
    - Registers an account
-   - ``<status>``
- - ``list conversations``
+- ``list conversations``
    - Lists all conversations
-   - ``<status> [conversations]``
- - ``list messages <username>``
+- ``list messages <id> <10x multiplier>``
    - Lists all messages in a conversation
-   - ``<status> [messages]``
+- ``message <id> <content>``
+  - Sends a message to the conversation
+- ``read <id>``
+  - Reads a conversation
