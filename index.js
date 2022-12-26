@@ -79,6 +79,7 @@ server.on("connection", (socket) => {
                                 for (let i = conversation.length - 1; i >= 0; i--) {
                                     matching.push(conversation[i]);
                                 }
+                                read(instance, args[2]);
                                 respond(socket, { "status": 400, "comment": "", "content": { "messages": matching } });
                             } catch {
                                 respond(socket, { "status": 404, "comment": "Conversation not found", "content": {} });
@@ -103,6 +104,32 @@ server.on("connection", (socket) => {
                             }
                         } else {
                             respond(socket, { "status": 400, "comment": "", "content": {} });
+                        }
+                    } else {
+                        respond(socket, { "status": 400, "comment": "", "content": {} });
+                    }
+                } else if (args[0] == "unread") {
+                    if (args.length == 2) {
+                        try {
+                            const conversation = database.execute(".|'conversations'|'" + args[1] + "'");
+                            if (conversation) {
+                                const cond = {
+                                    "username": [ [ instance.username ], [ true ] ]
+                                }
+                                const unreads = database.execute(".|'info'|'accounts'|" + JSON.stringify(cond))[0].unread;
+                                if (!unreads.includes(args[1])) {
+                                    unreads.push(parseInt(args[1]));
+                                    const set = {
+                                        "unread": unreads
+                                    }
+                                    database.execute("^|'info'|'accounts'|" + JSON.stringify(set) + "|" + JSON.stringify(cond));
+                                }
+                                respond(socket, { "status": 200, "comment": "", "content": {} });
+                            } else {
+                                respond(socket, { "status": 404, "comment": "Conversation not found", "content": {} });
+                            }
+                        } catch {
+                            respond(socket, { "status": 404, "comment": "Conversation not found", "content": {} });
                         }
                     } else {
                         respond(socket, { "status": 400, "comment": "", "content": {} });
@@ -136,16 +163,15 @@ server.on("connection", (socket) => {
                         database.execute("+|'conversations'|'" + args[1] + "'|" + JSON.stringify(message));
                         fs.appendFileSync(__dirname + "/data/conversations/" + args[1] + ".log", "[" + message.time + "] [" + message.id + "] [" + message.executor + "] [" + message.action + "] [" + message.target + "]: " + message.content + "\n");
                         respond(socket, { "status": 200, "comment": "", "content": {} });
-                        notify(instance, args[1], message, true);
+                        const notification = {
+                            "conversation": args[1],
+                            "time": message.time,
+                            "executor": message.executor,
+                            "action": message.action,
+                        }
+                        notify(instance, args[1], notification, true);
                     } catch {
                         respond(socket, { "status": 404, "comment": "Conversation not found", "content": {} });
-                    }
-                } else if (args[0] == "read") {
-                    if (args.length == 2) {
-                        read(instance, args[1]);
-                        respond(socket, { "status": 200, "comment": "", "content": {} });
-                    } else {
-                        respond(socket, { "status": 400, "comment": "", "content": {} });
                     }
                 } else {
                     respond(socket, { "status": 400, "comment": "", "content": {} });
@@ -326,26 +352,37 @@ function notify(instance, conversationID, message, markUnread) {
 
 function read(instance, conversationID) {
     const message = {
-        "id": null,
+        "conversation": conversationID,
         "time": new Date().toUTCString(),
         "executor": instance.username,
-        "action": "READ",
-        "target": null,
-        "content": null
+        "action": "READ"
     }
     try {
-        const conversation = database.execute(".|'conversations'|'" + conversationID + "'");
-        let id;
-        try {
-            id = conversation[conversation.length - 1].id + 1;
-        } catch {
-            id = 0;
+        const cond = {
+            "id": [ [ 0 ], [ true ]]
         }
-        message.id = id;
-        message.target = id - 1;
-        database.execute("+|'conversations'|'" + conversationID + "'|" + JSON.stringify(message));
-        fs.appendFileSync(__dirname + "/data/conversations/" + conversationID + ".log", "[" + message.time + "] [" + message.id + "] [" + message.executor + "] [" + message.action + "] [" + message.target + "]: " + message.content + "\n");
-        notify(instance, conversationID, message, false);
+        const conversationData = database.execute(".|'info'|'conversation-data'|" + JSON.stringify(cond));
+        const upto = conversationData[0].upto[conversationData[0].users.indexOf(instance.username)];
+        const conversation = database.execute(".|'conversations'|'" + conversationID + "'");
+        if (upto < conversation[conversation.length - 1].id) {
+            let id;
+            try {
+                id = conversation[conversation.length - 1].id;
+            } catch {
+                id = 0;
+            }
+            const newUpto = conversationData[0].upto;
+            newUpto[conversationData[0].users.indexOf(instance.username)] = id;
+            const set = {
+                "upto": newUpto
+            }
+            const cond = {
+                "id": [ [ conversationID ], [ true ] ]
+            }
+            database.execute("^|'info'|'conversation-data'|" + JSON.stringify(set) + "|" + JSON.stringify(cond));
+            fs.appendFileSync(__dirname + "/data/conversations/" + conversationID + ".log", "[" + message.time + "] [null] [" + message.executor + "] [" + message.action + "] [null]: Read all new messages\n");
+            notify(instance, conversationID, message, false);
+        }
         const condition = {
             "username": [ [ instance.username ], [ true ] ]
         }

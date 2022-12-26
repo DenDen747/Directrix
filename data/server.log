@@ -272,3 +272,307 @@
 [Sat, 11 Jun 2022 21:52:01 GMT] [OUTGOING]: user1 response {"status":200,"comment":"","content":{}}
 [Sat, 11 Jun 2022 21:52:01 GMT] [OUTGOING]: user2 response {"status":103,"comment":"Notification","content":{"id":13,"time":"Sat, 11 Jun 2022 21:52:01 GMT","executor":"user1","action":"MESSAGE","target":13,"content":"what's up"}}
 [Sat, 11 Jun 2022 21:53:40 GMT] [INFO]: Server stopped
+[Sun, 25 Dec 2022 23:56:07 GMT] [INFO]: Starting server...
+[Sun, 25 Dec 2022 23:56:07 GMT] [INFO]: Server started
+[Sun, 25 Dec 2022 23:56:30 GMT] [INFO]: 127.0.0.1 connected
+[Sun, 25 Dec 2022 23:56:41 GMT] [INCOMING]: 127.0.0.1 executed ["login","user1","pass1"]
+[Sun, 25 Dec 2022 23:56:41 GMT] [OUTGOING]: user1 response {"status":202,"comment":"","content":{}}
+[Sun, 25 Dec 2022 23:56:59 GMT] [INCOMING]: user1 executed ["list","conversations"]
+[Sun, 25 Dec 2022 23:56:59 GMT] [OUTGOING]: user1 response {"status":200,"comment":"","content":{"conversations":[{"id":0,"unread":false,"users":["user1","user2"]},{"id":1,"unread":false,"users":["user1","user3"]}]}}
+[Sun, 25 Dec 2022 23:57:17 GMT] [INCOMING]: user1 executed ["list","messages","0"]
+[Sun, 25 Dec 2022 23:57:17 GMT] [OUTGOING]: user1 response {"status":400,"comment":"","content":{"messages":[{"id":13,"time":"Sat, 11 Jun 2022 21:52:01 GMT","executor":"user1","action":"MESSAGE","target":13,"content":"what's up"},{"id":12,"time":"Sat, 11 Jun 2022 21:52:01 GMT","executor":"user1","action":"READ","target":11,"content":null},{"id":11,"time":"Sat, 11 Jun 2022 21:51:48 GMT","executor":"user2","action":"MESSAGE","target":11,"content":"hi"},{"id":10,"time":"Sat, 11 Jun 2022 21:50:35 GMT","executor":"user2","action":"READ","target":9,"content":null},{"id":9,"time":"Sat, 11 Jun 2022 21:49:58 GMT","executor":"user1","action":"MESSAGE","target":9,"content":"hello"},{"id":8,"time":"Sat, 11 Jun 2022 20:14:16 GMT","executor":"user2","action":"MESSAGE","target":8,"content":"hi"},{"id":7,"time":"Sat, 11 Jun 2022 20:14:15 GMT","executor":"user2","action":"READ","target":6,"content":null},{"id":6,"time":"Sat, 11 Jun 2022 20:14:01 GMT","executor":"user2","action":"READ","target":5,"content":null},{"id":5,"time":"Sat, 11 Jun 2022 20:13:25 GMT","executor":"user1","action":"MESSAGE","target":5,"content":"hey"},{"id":4,"time":"Sat, 11 Jun 2022 20:13:25 GMT","executor":"user1","action":"READ","target":3,"content":null},{"id":3,"time":"Sat, 11 Jun 2022 19:54:15 GMT","executor":"user2","action":"MESSAGE","target":3,"content":"hi"},{"id":2,"time":"Sat, 11 Jun 2022 19:54:02 GMT","executor":"user1","action":"MESSAGE","target":2,"content":"test"},{"id":1,"time":"Sat, 11 Jun 2022 19:53:05 GMT","executor":"user1","action":"MESSAGE","target":1,"content":"test"},{"id":0,"time":"Sat, 11 Jun 2022 19:52:31 GMT","executor":"user1","action":"MESSAGE","target":0,"content":"test"}]}}
+[Sun, 25 Dec 2022 23:58:10 GMT] [INCOMING]: user1 executed ["message","0","hello"]
+[Sun, 25 Dec 2022 23:58:10 GMT] [OUTGOING]: user1 response {"status":200,"comment":"","content":{}}
+[Sun, 25 Dec 2022 23:58:20 GMT] [INCOMING]: user1 executed ["list","messages","0"]
+[Sun, 25 Dec 2022 23:58:20 GMT] [OUTGOING]: user1 response {"status":400,"comment":"","content":{"messages":[{"id":14,"time":"Sun, 25 Dec 2022 23:58:10 GMT","executor":"user1","action":"MESSAGE","target":14,"content":"hello"},{"id":13,"time":"Sat, 11 Jun 2022 21:52:01 GMT","executor":"user1","action":"MESSAGE","target":13,"content":"what's up"},{"id":12,"time":"Sat, 11 Jun 2022 21:52:01 GMT","executor":"user1","action":"READ","target":11,"content":null},{"id":11,"time":"Sat, 11 Jun 2022 21:51:48 GMT","executor":"user2","action":"MESSAGE","target":11,"content":"hi"},{"id":10,"time":"Sat, 11 Jun 2022 21:50:35 GMT","executor":"user2","action":"READ","target":9,"content":null},{"id":9,"time":"Sat, 11 Jun 2022 21:49:58 GMT","executor":"user1","action":"MESSAGE","target":9,"content":"hello"},{"id":8,"time":"Sat, 11 Jun 2022 20:14:16 GMT","executor":"user2","action":"MESSAGE","target":8,"content":"hi"},{"id":7,"time":"Sat, 11 Jun 2022 20:14:15 GMT","executor":"user2","action":"READ","target":6,"content":null},{"id":6,"time":"Sat, 11 Jun 2022 20:14:01 GMT","executor":"user2","action":"READ","target":5,"content":null},{"id":5,"time":"Sat, 11 Jun 2022 20:13:25 GMT","executor":"user1","action":"MESSAGE","target":5,"content":"hey"},{"id":4,"time":"Sat, 11 Jun 2022 20:13:25 GMT","executor":"user1","action":"READ","target":3,"content":null},{"id":3,"time":"Sat, 11 Jun 2022 19:54:15 GMT","executor":"user2","action":"MESSAGE","target":3,"content":"hi"},{"id":2,"time":"Sat, 11 Jun 2022 19:54:02 GMT","executor":"user1","action":"MESSAGE","target":2,"content":"test"},{"id":1,"time":"Sat, 11 Jun 2022 19:53:05 GMT","executor":"user1","action":"MESSAGE","target":1,"content":"test"},{"id":0,"time":"Sat, 11 Jun 2022 19:52:31 GMT","executor":"user1","action":"MESSAGE","target":0,"content":"test"}]}}
+[Sun, 25 Dec 2022 23:58:36 GMT] [INFO]: user1 disconnected
+[Sun, 25 Dec 2022 23:59:32 GMT] [INFO]: Server stopped
+[Mon, 26 Dec 2022 01:11:01 GMT] [INFO]: Starting server...
+[Mon, 26 Dec 2022 01:11:01 GMT] [INFO]: Server started
+[Mon, 26 Dec 2022 01:11:03 GMT] [INFO]: 127.0.0.1 connected
+[Mon, 26 Dec 2022 01:11:11 GMT] [INCOMING]: 127.0.0.1 executed ["login","user2","pass2"]
+[Mon, 26 Dec 2022 01:11:11 GMT] [OUTGOING]: user2 response {"status":202,"comment":"","content":{}}
+[Mon, 26 Dec 2022 01:11:11 GMT] [OUTGOING]: user2 response {"status":103,"comment":"Notification","content":{"id":14,"time":"Sun, 25 Dec 2022 23:58:10 GMT","executor":"user1","action":"MESSAGE","target":14,"content":"hello"}}
+[Mon, 26 Dec 2022 01:11:32 GMT] [INFO]: user2 disconnected
+[Mon, 26 Dec 2022 01:11:50 GMT] [INFO]: 127.0.0.1 connected
+[Mon, 26 Dec 2022 01:11:55 GMT] [INCOMING]: 127.0.0.1 executed ["login","user2","pass2"]
+[Mon, 26 Dec 2022 01:11:55 GMT] [OUTGOING]: user2 response {"status":202,"comment":"","content":{}}
+[Mon, 26 Dec 2022 01:12:11 GMT] [INFO]: user2 disconnected
+[Mon, 26 Dec 2022 04:20:05 GMT] [INFO]: Starting server...
+[Mon, 26 Dec 2022 04:20:44 GMT] [INFO]: Starting server...
+[Mon, 26 Dec 2022 04:20:44 GMT] [INFO]: Server started
+[Mon, 26 Dec 2022 04:21:04 GMT] [INFO]: 127.0.0.1 connected
+[Mon, 26 Dec 2022 04:21:12 GMT] [INCOMING]: 127.0.0.1 executed ["login","user1","pass1"]
+[Mon, 26 Dec 2022 04:21:12 GMT] [OUTGOING]: user1 response {"status":202,"comment":"","content":{}}
+[Mon, 26 Dec 2022 04:21:19 GMT] [INCOMING]: user1 executed ["list","conversations"]
+[Mon, 26 Dec 2022 04:21:19 GMT] [OUTGOING]: user1 response {"status":200,"comment":"","content":{"conversations":[{"id":0,"unread":false,"users":["user1","user2"]},{"id":1,"unread":false,"users":["user1","user3"]}]}}
+[Mon, 26 Dec 2022 04:21:34 GMT] [INCOMING]: user1 executed ["list","messages","0"]
+[Mon, 26 Dec 2022 04:21:34 GMT] [OUTGOING]: user1 response {"status":400,"comment":"","content":{"messages":[{"id":14,"time":"Sun, 25 Dec 2022 23:58:10 GMT","executor":"user1","action":"MESSAGE","target":14,"content":"hello"},{"id":13,"time":"Sat, 11 Jun 2022 21:52:01 GMT","executor":"user1","action":"MESSAGE","target":13,"content":"what's up"},{"id":12,"time":"Sat, 11 Jun 2022 21:52:01 GMT","executor":"user1","action":"READ","target":11,"content":null},{"id":11,"time":"Sat, 11 Jun 2022 21:51:48 GMT","executor":"user2","action":"MESSAGE","target":11,"content":"hi"},{"id":10,"time":"Sat, 11 Jun 2022 21:50:35 GMT","executor":"user2","action":"READ","target":9,"content":null},{"id":9,"time":"Sat, 11 Jun 2022 21:49:58 GMT","executor":"user1","action":"MESSAGE","target":9,"content":"hello"},{"id":8,"time":"Sat, 11 Jun 2022 20:14:16 GMT","executor":"user2","action":"MESSAGE","target":8,"content":"hi"},{"id":7,"time":"Sat, 11 Jun 2022 20:14:15 GMT","executor":"user2","action":"READ","target":6,"content":null},{"id":6,"time":"Sat, 11 Jun 2022 20:14:01 GMT","executor":"user2","action":"READ","target":5,"content":null},{"id":5,"time":"Sat, 11 Jun 2022 20:13:25 GMT","executor":"user1","action":"MESSAGE","target":5,"content":"hey"},{"id":4,"time":"Sat, 11 Jun 2022 20:13:25 GMT","executor":"user1","action":"READ","target":3,"content":null},{"id":3,"time":"Sat, 11 Jun 2022 19:54:15 GMT","executor":"user2","action":"MESSAGE","target":3,"content":"hi"},{"id":2,"time":"Sat, 11 Jun 2022 19:54:02 GMT","executor":"user1","action":"MESSAGE","target":2,"content":"test"},{"id":1,"time":"Sat, 11 Jun 2022 19:53:05 GMT","executor":"user1","action":"MESSAGE","target":1,"content":"test"},{"id":0,"time":"Sat, 11 Jun 2022 19:52:31 GMT","executor":"user1","action":"MESSAGE","target":0,"content":"test"}]}}
+[Mon, 26 Dec 2022 04:21:51 GMT] [INCOMING]: user1 executed ["message","0","test message"]
+[Mon, 26 Dec 2022 04:21:51 GMT] [OUTGOING]: user1 response {"status":200,"comment":"","content":{}}
+[Mon, 26 Dec 2022 04:22:54 GMT] [INFO]: Server stopped
+[Mon, 26 Dec 2022 04:23:02 GMT] [INFO]: Starting server...
+[Mon, 26 Dec 2022 04:23:02 GMT] [INFO]: Server started
+[Mon, 26 Dec 2022 04:23:18 GMT] [INFO]: 127.0.0.1 connected
+[Mon, 26 Dec 2022 04:23:24 GMT] [INCOMING]: 127.0.0.1 executed ["login","user2","pass2"]
+[Mon, 26 Dec 2022 04:23:24 GMT] [OUTGOING]: user2 response {"status":202,"comment":"","content":{}}
+[Mon, 26 Dec 2022 04:23:24 GMT] [OUTGOING]: user2 response {"status":103,"comment":"Notification","content":{"conversation":"0","time":"Mon, 26 Dec 2022 04:21:51 GMT","executor":"user1","action":"MESSAGE"}}
+[Mon, 26 Dec 2022 04:23:38 GMT] [INCOMING]: user2 executed ["list","conversations"]
+[Mon, 26 Dec 2022 04:23:38 GMT] [OUTGOING]: user2 response {"status":200,"comment":"","content":{"conversations":[{"id":0,"unread":true,"users":["user1","user2"]}]}}
+[Mon, 26 Dec 2022 04:23:53 GMT] [INCOMING]: user2 executed ["list","messages","0"]
+[Mon, 26 Dec 2022 04:23:53 GMT] [OUTGOING]: user2 response {"status":404,"comment":"Conversation not found","content":{}}
+[Mon, 26 Dec 2022 04:24:11 GMT] [INCOMING]: user2 executed ["list","messages","0"]
+[Mon, 26 Dec 2022 04:24:11 GMT] [OUTGOING]: user2 response {"status":404,"comment":"Conversation not found","content":{}}
+[Mon, 26 Dec 2022 04:24:12 GMT] [INCOMING]: user2 executed ["list","messages","0"]
+[Mon, 26 Dec 2022 04:24:12 GMT] [OUTGOING]: user2 response {"status":404,"comment":"Conversation not found","content":{}}
+[Mon, 26 Dec 2022 04:24:24 GMT] [INFO]: Server stopped
+[Mon, 26 Dec 2022 04:24:38 GMT] [INFO]: Starting server...
+[Mon, 26 Dec 2022 04:24:38 GMT] [INFO]: Server started
+[Mon, 26 Dec 2022 04:24:42 GMT] [INFO]: 127.0.0.1 connected
+[Mon, 26 Dec 2022 04:24:47 GMT] [INCOMING]: 127.0.0.1 executed ["login","user2","pass2"]
+[Mon, 26 Dec 2022 04:24:47 GMT] [OUTGOING]: user2 response {"status":202,"comment":"","content":{}}
+[Mon, 26 Dec 2022 04:24:52 GMT] [INCOMING]: user2 executed ["list","messages","0"]
+[Mon, 26 Dec 2022 04:24:52 GMT] [OUTGOING]: user2 response {"status":404,"comment":"Conversation not found","content":{}}
+[Mon, 26 Dec 2022 04:25:39 GMT] [INFO]: Server stopped
+[Mon, 26 Dec 2022 04:25:39 GMT] [INFO]: Starting server...
+[Mon, 26 Dec 2022 04:25:39 GMT] [INFO]: Server started
+[Mon, 26 Dec 2022 04:25:42 GMT] [INFO]: 127.0.0.1 connected
+[Mon, 26 Dec 2022 04:25:45 GMT] [INCOMING]: 127.0.0.1 executed ["login","user2","pass2"]
+[Mon, 26 Dec 2022 04:25:45 GMT] [OUTGOING]: user2 response {"status":202,"comment":"","content":{}}
+[Mon, 26 Dec 2022 04:25:48 GMT] [INCOMING]: user2 executed ["login","user2","pass"]
+[Mon, 26 Dec 2022 04:25:48 GMT] [OUTGOING]: user2 response {"status":400,"comment":"","content":{}}
+[Mon, 26 Dec 2022 04:25:53 GMT] [INCOMING]: user2 executed ["list","messages","0"]
+[Mon, 26 Dec 2022 04:26:27 GMT] [INFO]: Starting server...
+[Mon, 26 Dec 2022 04:26:27 GMT] [INFO]: Server started
+[Mon, 26 Dec 2022 04:26:28 GMT] [INFO]: 127.0.0.1 connected
+[Mon, 26 Dec 2022 04:26:33 GMT] [INCOMING]: 127.0.0.1 executed ["login","user2","pass2"]
+[Mon, 26 Dec 2022 04:26:33 GMT] [OUTGOING]: user2 response {"status":202,"comment":"","content":{}}
+[Mon, 26 Dec 2022 04:26:37 GMT] [INCOMING]: user2 executed ["list","messages","0"]
+[Mon, 26 Dec 2022 04:34:42 GMT] [INFO]: Starting server...
+[Mon, 26 Dec 2022 04:34:42 GMT] [INFO]: Server started
+[Mon, 26 Dec 2022 04:34:46 GMT] [INFO]: 127.0.0.1 connected
+[Mon, 26 Dec 2022 04:34:49 GMT] [INCOMING]: 127.0.0.1 executed ["login","user2"]
+[Mon, 26 Dec 2022 04:34:49 GMT] [OUTGOING]: 127.0.0.1 response {"status":400,"comment":"","content":{}}
+[Mon, 26 Dec 2022 04:34:52 GMT] [INCOMING]: 127.0.0.1 executed ["login","user2","pass2"]
+[Mon, 26 Dec 2022 04:34:52 GMT] [OUTGOING]: user2 response {"status":202,"comment":"","content":{}}
+[Mon, 26 Dec 2022 04:34:56 GMT] [INCOMING]: user2 executed ["list","messages","0"]
+[Mon, 26 Dec 2022 04:35:39 GMT] [INFO]: Starting server...
+[Mon, 26 Dec 2022 04:35:39 GMT] [INFO]: Server started
+[Mon, 26 Dec 2022 04:35:42 GMT] [INFO]: 127.0.0.1 connected
+[Mon, 26 Dec 2022 04:35:46 GMT] [INCOMING]: 127.0.0.1 executed ["login","user2","pass2"]
+[Mon, 26 Dec 2022 04:35:46 GMT] [OUTGOING]: user2 response {"status":202,"comment":"","content":{}}
+[Mon, 26 Dec 2022 04:35:57 GMT] [INCOMING]: user2 executed ["list","messages","0"]
+[Mon, 26 Dec 2022 04:35:57 GMT] [OUTGOING]: user2 response {"status":400,"comment":"","content":{"messages":[{"id":15,"time":"Mon, 26 Dec 2022 04:21:51 GMT","executor":"user1","action":"MESSAGE","target":15,"content":"test message"},{"id":14,"time":"Sun, 25 Dec 2022 23:58:10 GMT","executor":"user1","action":"MESSAGE","target":14,"content":"hello"},{"id":13,"time":"Sat, 11 Jun 2022 21:52:01 GMT","executor":"user1","action":"MESSAGE","target":13,"content":"what's up"},{"id":12,"time":"Sat, 11 Jun 2022 21:52:01 GMT","executor":"user1","action":"READ","target":11,"content":null},{"id":11,"time":"Sat, 11 Jun 2022 21:51:48 GMT","executor":"user2","action":"MESSAGE","target":11,"content":"hi"},{"id":10,"time":"Sat, 11 Jun 2022 21:50:35 GMT","executor":"user2","action":"READ","target":9,"content":null},{"id":9,"time":"Sat, 11 Jun 2022 21:49:58 GMT","executor":"user1","action":"MESSAGE","target":9,"content":"hello"},{"id":8,"time":"Sat, 11 Jun 2022 20:14:16 GMT","executor":"user2","action":"MESSAGE","target":8,"content":"hi"},{"id":7,"time":"Sat, 11 Jun 2022 20:14:15 GMT","executor":"user2","action":"READ","target":6,"content":null},{"id":6,"time":"Sat, 11 Jun 2022 20:14:01 GMT","executor":"user2","action":"READ","target":5,"content":null},{"id":5,"time":"Sat, 11 Jun 2022 20:13:25 GMT","executor":"user1","action":"MESSAGE","target":5,"content":"hey"},{"id":4,"time":"Sat, 11 Jun 2022 20:13:25 GMT","executor":"user1","action":"READ","target":3,"content":null},{"id":3,"time":"Sat, 11 Jun 2022 19:54:15 GMT","executor":"user2","action":"MESSAGE","target":3,"content":"hi"},{"id":2,"time":"Sat, 11 Jun 2022 19:54:02 GMT","executor":"user1","action":"MESSAGE","target":2,"content":"test"},{"id":1,"time":"Sat, 11 Jun 2022 19:53:05 GMT","executor":"user1","action":"MESSAGE","target":1,"content":"test"},{"id":0,"time":"Sat, 11 Jun 2022 19:52:31 GMT","executor":"user1","action":"MESSAGE","target":0,"content":"test"}]}}
+[Mon, 26 Dec 2022 04:48:29 GMT] [INFO]: Server stopped
+[Mon, 26 Dec 2022 04:48:30 GMT] [INFO]: Starting server...
+[Mon, 26 Dec 2022 04:48:30 GMT] [INFO]: Server started
+[Mon, 26 Dec 2022 04:48:34 GMT] [INFO]: 127.0.0.1 connected
+[Mon, 26 Dec 2022 04:48:38 GMT] [INCOMING]: 127.0.0.1 executed ["login","user2","pass2"]
+[Mon, 26 Dec 2022 04:48:38 GMT] [OUTGOING]: user2 response {"status":202,"comment":"","content":{}}
+[Mon, 26 Dec 2022 04:48:51 GMT] [INCOMING]: user2 executed ["list","conversations"]
+[Mon, 26 Dec 2022 04:48:51 GMT] [OUTGOING]: user2 response {"status":200,"comment":"","content":{"conversations":[{"id":0,"unread":true,"users":["user1","user2"]}]}}
+[Mon, 26 Dec 2022 04:48:56 GMT] [INCOMING]: user2 executed ["list","messages","0"]
+[Mon, 26 Dec 2022 04:48:56 GMT] [OUTGOING]: user2 response {"status":400,"comment":"","content":{"messages":[{"id":15,"time":"Mon, 26 Dec 2022 04:21:51 GMT","executor":"user1","action":"MESSAGE","target":15,"content":"test message"},{"id":14,"time":"Sun, 25 Dec 2022 23:58:10 GMT","executor":"user1","action":"MESSAGE","target":14,"content":"hello"},{"id":13,"time":"Sat, 11 Jun 2022 21:52:01 GMT","executor":"user1","action":"MESSAGE","target":13,"content":"what's up"},{"id":12,"time":"Sat, 11 Jun 2022 21:52:01 GMT","executor":"user1","action":"READ","target":11,"content":null},{"id":11,"time":"Sat, 11 Jun 2022 21:51:48 GMT","executor":"user2","action":"MESSAGE","target":11,"content":"hi"},{"id":10,"time":"Sat, 11 Jun 2022 21:50:35 GMT","executor":"user2","action":"READ","target":9,"content":null},{"id":9,"time":"Sat, 11 Jun 2022 21:49:58 GMT","executor":"user1","action":"MESSAGE","target":9,"content":"hello"},{"id":8,"time":"Sat, 11 Jun 2022 20:14:16 GMT","executor":"user2","action":"MESSAGE","target":8,"content":"hi"},{"id":7,"time":"Sat, 11 Jun 2022 20:14:15 GMT","executor":"user2","action":"READ","target":6,"content":null},{"id":6,"time":"Sat, 11 Jun 2022 20:14:01 GMT","executor":"user2","action":"READ","target":5,"content":null},{"id":5,"time":"Sat, 11 Jun 2022 20:13:25 GMT","executor":"user1","action":"MESSAGE","target":5,"content":"hey"},{"id":4,"time":"Sat, 11 Jun 2022 20:13:25 GMT","executor":"user1","action":"READ","target":3,"content":null},{"id":3,"time":"Sat, 11 Jun 2022 19:54:15 GMT","executor":"user2","action":"MESSAGE","target":3,"content":"hi"},{"id":2,"time":"Sat, 11 Jun 2022 19:54:02 GMT","executor":"user1","action":"MESSAGE","target":2,"content":"test"},{"id":1,"time":"Sat, 11 Jun 2022 19:53:05 GMT","executor":"user1","action":"MESSAGE","target":1,"content":"test"},{"id":0,"time":"Sat, 11 Jun 2022 19:52:31 GMT","executor":"user1","action":"MESSAGE","target":0,"content":"test"}]}}
+[Mon, 26 Dec 2022 04:51:09 GMT] [INFO]: Server stopped
+[Mon, 26 Dec 2022 04:51:09 GMT] [INFO]: Starting server...
+[Mon, 26 Dec 2022 04:51:09 GMT] [INFO]: Server started
+[Mon, 26 Dec 2022 04:51:11 GMT] [INFO]: 127.0.0.1 connected
+[Mon, 26 Dec 2022 04:51:15 GMT] [INCOMING]: 127.0.0.1 executed ["login","user2","pass2"]
+[Mon, 26 Dec 2022 04:51:15 GMT] [OUTGOING]: user2 response {"status":202,"comment":"","content":{}}
+[Mon, 26 Dec 2022 04:51:21 GMT] [INCOMING]: user2 executed ["list","messages","0"]
+[Mon, 26 Dec 2022 04:51:21 GMT] [OUTGOING]: user2 response {"status":400,"comment":"","content":{"messages":[{"id":15,"time":"Mon, 26 Dec 2022 04:21:51 GMT","executor":"user1","action":"MESSAGE","target":15,"content":"test message"},{"id":14,"time":"Sun, 25 Dec 2022 23:58:10 GMT","executor":"user1","action":"MESSAGE","target":14,"content":"hello"},{"id":13,"time":"Sat, 11 Jun 2022 21:52:01 GMT","executor":"user1","action":"MESSAGE","target":13,"content":"what's up"},{"id":12,"time":"Sat, 11 Jun 2022 21:52:01 GMT","executor":"user1","action":"READ","target":11,"content":null},{"id":11,"time":"Sat, 11 Jun 2022 21:51:48 GMT","executor":"user2","action":"MESSAGE","target":11,"content":"hi"},{"id":10,"time":"Sat, 11 Jun 2022 21:50:35 GMT","executor":"user2","action":"READ","target":9,"content":null},{"id":9,"time":"Sat, 11 Jun 2022 21:49:58 GMT","executor":"user1","action":"MESSAGE","target":9,"content":"hello"},{"id":8,"time":"Sat, 11 Jun 2022 20:14:16 GMT","executor":"user2","action":"MESSAGE","target":8,"content":"hi"},{"id":7,"time":"Sat, 11 Jun 2022 20:14:15 GMT","executor":"user2","action":"READ","target":6,"content":null},{"id":6,"time":"Sat, 11 Jun 2022 20:14:01 GMT","executor":"user2","action":"READ","target":5,"content":null},{"id":5,"time":"Sat, 11 Jun 2022 20:13:25 GMT","executor":"user1","action":"MESSAGE","target":5,"content":"hey"},{"id":4,"time":"Sat, 11 Jun 2022 20:13:25 GMT","executor":"user1","action":"READ","target":3,"content":null},{"id":3,"time":"Sat, 11 Jun 2022 19:54:15 GMT","executor":"user2","action":"MESSAGE","target":3,"content":"hi"},{"id":2,"time":"Sat, 11 Jun 2022 19:54:02 GMT","executor":"user1","action":"MESSAGE","target":2,"content":"test"},{"id":1,"time":"Sat, 11 Jun 2022 19:53:05 GMT","executor":"user1","action":"MESSAGE","target":1,"content":"test"},{"id":0,"time":"Sat, 11 Jun 2022 19:52:31 GMT","executor":"user1","action":"MESSAGE","target":0,"content":"test"}]}}
+[Mon, 26 Dec 2022 04:52:01 GMT] [INFO]: Server stopped
+[Mon, 26 Dec 2022 04:52:02 GMT] [INFO]: Starting server...
+[Mon, 26 Dec 2022 04:52:02 GMT] [INFO]: Server started
+[Mon, 26 Dec 2022 04:52:04 GMT] [INFO]: 127.0.0.1 connected
+[Mon, 26 Dec 2022 04:52:09 GMT] [INCOMING]: 127.0.0.1 executed ["login","user2","pass2"]
+[Mon, 26 Dec 2022 04:52:09 GMT] [OUTGOING]: user2 response {"status":202,"comment":"","content":{}}
+[Mon, 26 Dec 2022 04:52:16 GMT] [INCOMING]: user2 executed ["list","conversations"]
+[Mon, 26 Dec 2022 04:52:16 GMT] [OUTGOING]: user2 response {"status":200,"comment":"","content":{"conversations":[{"id":0,"unread":true,"users":["user1","user2"]}]}}
+[Mon, 26 Dec 2022 04:52:20 GMT] [INCOMING]: user2 executed ["list","messages","0"]
+[Mon, 26 Dec 2022 04:53:17 GMT] [INFO]: Starting server...
+[Mon, 26 Dec 2022 04:53:17 GMT] [INFO]: Server started
+[Mon, 26 Dec 2022 04:53:19 GMT] [INFO]: 127.0.0.1 connected
+[Mon, 26 Dec 2022 04:53:22 GMT] [INCOMING]: 127.0.0.1 executed ["login","user2"]
+[Mon, 26 Dec 2022 04:53:22 GMT] [OUTGOING]: 127.0.0.1 response {"status":400,"comment":"","content":{}}
+[Mon, 26 Dec 2022 04:53:26 GMT] [INCOMING]: 127.0.0.1 executed ["login","user2","pass2"]
+[Mon, 26 Dec 2022 04:53:26 GMT] [OUTGOING]: user2 response {"status":202,"comment":"","content":{}}
+[Mon, 26 Dec 2022 04:53:31 GMT] [INCOMING]: user2 executed ["list","conversations"]
+[Mon, 26 Dec 2022 04:53:31 GMT] [OUTGOING]: user2 response {"status":200,"comment":"","content":{"conversations":[{"id":0,"unread":true,"users":["user1","user2"]}]}}
+[Mon, 26 Dec 2022 04:53:36 GMT] [INCOMING]: user2 executed ["list","messages","0"]
+[Mon, 26 Dec 2022 04:54:04 GMT] [INFO]: Starting server...
+[Mon, 26 Dec 2022 04:54:04 GMT] [INFO]: Server started
+[Mon, 26 Dec 2022 04:54:06 GMT] [INFO]: 127.0.0.1 connected
+[Mon, 26 Dec 2022 04:54:09 GMT] [INCOMING]: 127.0.0.1 executed ["login","user2"]
+[Mon, 26 Dec 2022 04:54:09 GMT] [OUTGOING]: 127.0.0.1 response {"status":400,"comment":"","content":{}}
+[Mon, 26 Dec 2022 04:54:14 GMT] [INCOMING]: 127.0.0.1 executed ["login","user2","pass2"]
+[Mon, 26 Dec 2022 04:54:14 GMT] [OUTGOING]: user2 response {"status":202,"comment":"","content":{}}
+[Mon, 26 Dec 2022 04:54:21 GMT] [INCOMING]: user2 executed ["list","messages","0"]
+[Mon, 26 Dec 2022 04:54:21 GMT] [OUTGOING]: user2 response {"status":400,"comment":"","content":{"messages":[{"id":15,"time":"Mon, 26 Dec 2022 04:21:51 GMT","executor":"user1","action":"MESSAGE","target":15,"content":"test message"},{"id":14,"time":"Sun, 25 Dec 2022 23:58:10 GMT","executor":"user1","action":"MESSAGE","target":14,"content":"hello"},{"id":13,"time":"Sat, 11 Jun 2022 21:52:01 GMT","executor":"user1","action":"MESSAGE","target":13,"content":"what's up"},{"id":12,"time":"Sat, 11 Jun 2022 21:52:01 GMT","executor":"user1","action":"READ","target":11,"content":null},{"id":11,"time":"Sat, 11 Jun 2022 21:51:48 GMT","executor":"user2","action":"MESSAGE","target":11,"content":"hi"},{"id":10,"time":"Sat, 11 Jun 2022 21:50:35 GMT","executor":"user2","action":"READ","target":9,"content":null},{"id":9,"time":"Sat, 11 Jun 2022 21:49:58 GMT","executor":"user1","action":"MESSAGE","target":9,"content":"hello"},{"id":8,"time":"Sat, 11 Jun 2022 20:14:16 GMT","executor":"user2","action":"MESSAGE","target":8,"content":"hi"},{"id":7,"time":"Sat, 11 Jun 2022 20:14:15 GMT","executor":"user2","action":"READ","target":6,"content":null},{"id":6,"time":"Sat, 11 Jun 2022 20:14:01 GMT","executor":"user2","action":"READ","target":5,"content":null},{"id":5,"time":"Sat, 11 Jun 2022 20:13:25 GMT","executor":"user1","action":"MESSAGE","target":5,"content":"hey"},{"id":4,"time":"Sat, 11 Jun 2022 20:13:25 GMT","executor":"user1","action":"READ","target":3,"content":null},{"id":3,"time":"Sat, 11 Jun 2022 19:54:15 GMT","executor":"user2","action":"MESSAGE","target":3,"content":"hi"},{"id":2,"time":"Sat, 11 Jun 2022 19:54:02 GMT","executor":"user1","action":"MESSAGE","target":2,"content":"test"},{"id":1,"time":"Sat, 11 Jun 2022 19:53:05 GMT","executor":"user1","action":"MESSAGE","target":1,"content":"test"},{"id":0,"time":"Sat, 11 Jun 2022 19:52:31 GMT","executor":"user1","action":"MESSAGE","target":0,"content":"test"}]}}
+[Mon, 26 Dec 2022 04:54:52 GMT] [INFO]: user2 disconnected
+[Mon, 26 Dec 2022 04:54:55 GMT] [INFO]: 127.0.0.1 connected
+[Mon, 26 Dec 2022 04:55:04 GMT] [INCOMING]: 127.0.0.1 executed ["list","messages","0"]
+[Mon, 26 Dec 2022 04:55:04 GMT] [OUTGOING]: 127.0.0.1 response {"status":400,"comment":"","content":{}}
+[Mon, 26 Dec 2022 04:55:10 GMT] [INCOMING]: 127.0.0.1 executed ["login","user1","pass1"]
+[Mon, 26 Dec 2022 04:55:10 GMT] [OUTGOING]: user1 response {"status":202,"comment":"","content":{}}
+[Mon, 26 Dec 2022 04:55:10 GMT] [OUTGOING]: user1 response {"status":103,"comment":"Notification","content":{"conversation":"0","time":"Mon, 26 Dec 2022 04:54:21 GMT","executor":"user2","action":"READ"}}
+[Mon, 26 Dec 2022 04:55:27 GMT] [INCOMING]: user1 executed ["list","conversations"]
+[Mon, 26 Dec 2022 04:55:27 GMT] [OUTGOING]: user1 response {"status":200,"comment":"","content":{"conversations":[{"id":0,"unread":false,"users":["user1","user2"]},{"id":1,"unread":false,"users":["user1","user3"]}]}}
+[Mon, 26 Dec 2022 04:55:31 GMT] [INCOMING]: user1 executed ["list","messages"]
+[Mon, 26 Dec 2022 04:55:31 GMT] [OUTGOING]: user1 response {"status":400,"comment":"","content":{}}
+[Mon, 26 Dec 2022 04:55:36 GMT] [INCOMING]: user1 executed ["list","messages","0"]
+[Mon, 26 Dec 2022 04:55:36 GMT] [OUTGOING]: user1 response {"status":400,"comment":"","content":{"messages":[{"id":15,"time":"Mon, 26 Dec 2022 04:21:51 GMT","executor":"user1","action":"MESSAGE","target":15,"content":"test message"},{"id":14,"time":"Sun, 25 Dec 2022 23:58:10 GMT","executor":"user1","action":"MESSAGE","target":14,"content":"hello"},{"id":13,"time":"Sat, 11 Jun 2022 21:52:01 GMT","executor":"user1","action":"MESSAGE","target":13,"content":"what's up"},{"id":12,"time":"Sat, 11 Jun 2022 21:52:01 GMT","executor":"user1","action":"READ","target":11,"content":null},{"id":11,"time":"Sat, 11 Jun 2022 21:51:48 GMT","executor":"user2","action":"MESSAGE","target":11,"content":"hi"},{"id":10,"time":"Sat, 11 Jun 2022 21:50:35 GMT","executor":"user2","action":"READ","target":9,"content":null},{"id":9,"time":"Sat, 11 Jun 2022 21:49:58 GMT","executor":"user1","action":"MESSAGE","target":9,"content":"hello"},{"id":8,"time":"Sat, 11 Jun 2022 20:14:16 GMT","executor":"user2","action":"MESSAGE","target":8,"content":"hi"},{"id":7,"time":"Sat, 11 Jun 2022 20:14:15 GMT","executor":"user2","action":"READ","target":6,"content":null},{"id":6,"time":"Sat, 11 Jun 2022 20:14:01 GMT","executor":"user2","action":"READ","target":5,"content":null},{"id":5,"time":"Sat, 11 Jun 2022 20:13:25 GMT","executor":"user1","action":"MESSAGE","target":5,"content":"hey"},{"id":4,"time":"Sat, 11 Jun 2022 20:13:25 GMT","executor":"user1","action":"READ","target":3,"content":null},{"id":3,"time":"Sat, 11 Jun 2022 19:54:15 GMT","executor":"user2","action":"MESSAGE","target":3,"content":"hi"},{"id":2,"time":"Sat, 11 Jun 2022 19:54:02 GMT","executor":"user1","action":"MESSAGE","target":2,"content":"test"},{"id":1,"time":"Sat, 11 Jun 2022 19:53:05 GMT","executor":"user1","action":"MESSAGE","target":1,"content":"test"},{"id":0,"time":"Sat, 11 Jun 2022 19:52:31 GMT","executor":"user1","action":"MESSAGE","target":0,"content":"test"}]}}
+[Mon, 26 Dec 2022 04:56:05 GMT] [INFO]: user1 disconnected
+[Mon, 26 Dec 2022 04:56:27 GMT] [INFO]: 127.0.0.1 connected
+[Mon, 26 Dec 2022 04:56:31 GMT] [INCOMING]: 127.0.0.1 executed ["login","user1","pass1"]
+[Mon, 26 Dec 2022 04:56:31 GMT] [OUTGOING]: user1 response {"status":202,"comment":"","content":{}}
+[Mon, 26 Dec 2022 04:57:00 GMT] [INFO]: user1 disconnected
+[Mon, 26 Dec 2022 04:57:00 GMT] [INFO]: 127.0.0.1 connected
+[Mon, 26 Dec 2022 04:57:05 GMT] [INCOMING]: 127.0.0.1 executed ["login","user2","pass2"]
+[Mon, 26 Dec 2022 04:57:05 GMT] [OUTGOING]: user2 response {"status":202,"comment":"","content":{}}
+[Mon, 26 Dec 2022 04:57:05 GMT] [OUTGOING]: user2 response {"status":103,"comment":"Notification","content":{"conversation":"0","time":"Mon, 26 Dec 2022 04:55:36 GMT","executor":"user1","action":"READ"}}
+[Mon, 26 Dec 2022 04:57:20 GMT] [INCOMING]: user2 executed ["list","messages","0"]
+[Mon, 26 Dec 2022 04:57:20 GMT] [OUTGOING]: user2 response {"status":400,"comment":"","content":{"messages":[{"id":15,"time":"Mon, 26 Dec 2022 04:21:51 GMT","executor":"user1","action":"MESSAGE","target":15,"content":"test message"},{"id":14,"time":"Sun, 25 Dec 2022 23:58:10 GMT","executor":"user1","action":"MESSAGE","target":14,"content":"hello"},{"id":13,"time":"Sat, 11 Jun 2022 21:52:01 GMT","executor":"user1","action":"MESSAGE","target":13,"content":"what's up"},{"id":12,"time":"Sat, 11 Jun 2022 21:52:01 GMT","executor":"user1","action":"READ","target":11,"content":null},{"id":11,"time":"Sat, 11 Jun 2022 21:51:48 GMT","executor":"user2","action":"MESSAGE","target":11,"content":"hi"},{"id":10,"time":"Sat, 11 Jun 2022 21:50:35 GMT","executor":"user2","action":"READ","target":9,"content":null},{"id":9,"time":"Sat, 11 Jun 2022 21:49:58 GMT","executor":"user1","action":"MESSAGE","target":9,"content":"hello"},{"id":8,"time":"Sat, 11 Jun 2022 20:14:16 GMT","executor":"user2","action":"MESSAGE","target":8,"content":"hi"},{"id":7,"time":"Sat, 11 Jun 2022 20:14:15 GMT","executor":"user2","action":"READ","target":6,"content":null},{"id":6,"time":"Sat, 11 Jun 2022 20:14:01 GMT","executor":"user2","action":"READ","target":5,"content":null},{"id":5,"time":"Sat, 11 Jun 2022 20:13:25 GMT","executor":"user1","action":"MESSAGE","target":5,"content":"hey"},{"id":4,"time":"Sat, 11 Jun 2022 20:13:25 GMT","executor":"user1","action":"READ","target":3,"content":null},{"id":3,"time":"Sat, 11 Jun 2022 19:54:15 GMT","executor":"user2","action":"MESSAGE","target":3,"content":"hi"},{"id":2,"time":"Sat, 11 Jun 2022 19:54:02 GMT","executor":"user1","action":"MESSAGE","target":2,"content":"test"},{"id":1,"time":"Sat, 11 Jun 2022 19:53:05 GMT","executor":"user1","action":"MESSAGE","target":1,"content":"test"},{"id":0,"time":"Sat, 11 Jun 2022 19:52:31 GMT","executor":"user1","action":"MESSAGE","target":0,"content":"test"}]}}
+[Mon, 26 Dec 2022 04:57:38 GMT] [INFO]: user2 disconnected
+[Mon, 26 Dec 2022 04:57:41 GMT] [INFO]: Server stopped
+[Mon, 26 Dec 2022 05:16:43 GMT] [INFO]: Starting server...
+[Mon, 26 Dec 2022 05:16:43 GMT] [INFO]: Server started
+[Mon, 26 Dec 2022 05:16:46 GMT] [INFO]: 127.0.0.1 connected
+[Mon, 26 Dec 2022 05:16:49 GMT] [INCOMING]: 127.0.0.1 executed ["login","user1","pass1"]
+[Mon, 26 Dec 2022 05:16:49 GMT] [OUTGOING]: user1 response {"status":202,"comment":"","content":{}}
+[Mon, 26 Dec 2022 05:16:52 GMT] [INCOMING]: user1 executed ["list","conversations"]
+[Mon, 26 Dec 2022 05:16:52 GMT] [OUTGOING]: user1 response {"status":200,"comment":"","content":{"conversations":[{"id":0,"unread":false,"users":["user1","user2"]},{"id":1,"unread":false,"users":["user1","user3"]}]}}
+[Mon, 26 Dec 2022 05:16:57 GMT] [INCOMING]: user1 executed ["unread","3"]
+[Mon, 26 Dec 2022 05:16:57 GMT] [OUTGOING]: user1 response {"status":404,"comment":"Conversation not found","content":{}}
+[Mon, 26 Dec 2022 05:17:01 GMT] [INCOMING]: user1 executed ["unread","0"]
+[Mon, 26 Dec 2022 05:17:01 GMT] [OUTGOING]: user1 response {"status":404,"comment":"Conversation not found","content":{}}
+[Mon, 26 Dec 2022 05:17:15 GMT] [INFO]: Server stopped
+[Mon, 26 Dec 2022 05:17:15 GMT] [INFO]: Starting server...
+[Mon, 26 Dec 2022 05:17:15 GMT] [INFO]: Server started
+[Mon, 26 Dec 2022 05:17:18 GMT] [INFO]: 127.0.0.1 connected
+[Mon, 26 Dec 2022 05:17:22 GMT] [INCOMING]: 127.0.0.1 executed ["login","user1","pass1"]
+[Mon, 26 Dec 2022 05:17:22 GMT] [OUTGOING]: user1 response {"status":202,"comment":"","content":{}}
+[Mon, 26 Dec 2022 05:17:26 GMT] [INCOMING]: user1 executed ["unread","0"]
+[Mon, 26 Dec 2022 05:17:53 GMT] [INFO]: Starting server...
+[Mon, 26 Dec 2022 05:17:53 GMT] [INFO]: Server started
+[Mon, 26 Dec 2022 05:17:57 GMT] [INFO]: 127.0.0.1 connected
+[Mon, 26 Dec 2022 05:18:00 GMT] [INCOMING]: 127.0.0.1 executed ["login","user1","pass1"]
+[Mon, 26 Dec 2022 05:18:00 GMT] [OUTGOING]: user1 response {"status":202,"comment":"","content":{}}
+[Mon, 26 Dec 2022 05:18:06 GMT] [INCOMING]: user1 executed ["unread","0"]
+[Mon, 26 Dec 2022 05:18:06 GMT] [OUTGOING]: user1 response {"status":200,"comment":"","content":{}}
+[Mon, 26 Dec 2022 05:18:10 GMT] [INCOMING]: user1 executed ["list","conversations"]
+[Mon, 26 Dec 2022 05:18:10 GMT] [OUTGOING]: user1 response {"status":200,"comment":"","content":{"conversations":[{"id":0,"unread":false,"users":["user1","user2"]},{"id":1,"unread":false,"users":["user1","user3"]}]}}
+[Mon, 26 Dec 2022 05:18:33 GMT] [INCOMING]: user1 executed ["unread","0"]
+[Mon, 26 Dec 2022 05:18:33 GMT] [OUTGOING]: user1 response {"status":200,"comment":"","content":{}}
+[Mon, 26 Dec 2022 05:19:30 GMT] [INFO]: Server stopped
+[Mon, 26 Dec 2022 05:19:30 GMT] [INFO]: Starting server...
+[Mon, 26 Dec 2022 05:19:30 GMT] [INFO]: Server started
+[Mon, 26 Dec 2022 05:19:32 GMT] [INFO]: 127.0.0.1 connected
+[Mon, 26 Dec 2022 05:19:37 GMT] [INCOMING]: 127.0.0.1 executed ["login","user1","pass1"]
+[Mon, 26 Dec 2022 05:19:37 GMT] [OUTGOING]: user1 response {"status":202,"comment":"","content":{}}
+[Mon, 26 Dec 2022 05:19:41 GMT] [INCOMING]: user1 executed ["unread","0"]
+[Mon, 26 Dec 2022 05:19:41 GMT] [OUTGOING]: user1 response {"status":200,"comment":"","content":{}}
+[Mon, 26 Dec 2022 05:20:41 GMT] [INFO]: Server stopped
+[Mon, 26 Dec 2022 05:20:42 GMT] [INFO]: Starting server...
+[Mon, 26 Dec 2022 05:20:42 GMT] [INFO]: Server started
+[Mon, 26 Dec 2022 05:20:45 GMT] [INFO]: 127.0.0.1 connected
+[Mon, 26 Dec 2022 05:20:49 GMT] [INCOMING]: 127.0.0.1 executed ["login","user1","pass1"]
+[Mon, 26 Dec 2022 05:20:49 GMT] [OUTGOING]: user1 response {"status":202,"comment":"","content":{}}
+[Mon, 26 Dec 2022 05:20:52 GMT] [INCOMING]: user1 executed ["unread","0"]
+[Mon, 26 Dec 2022 05:20:52 GMT] [OUTGOING]: user1 response {"status":200,"comment":"","content":{}}
+[Mon, 26 Dec 2022 05:21:17 GMT] [INFO]: Server stopped
+[Mon, 26 Dec 2022 05:21:18 GMT] [INFO]: Starting server...
+[Mon, 26 Dec 2022 05:21:18 GMT] [INFO]: Server started
+[Mon, 26 Dec 2022 05:21:22 GMT] [INFO]: Server stopped
+[Mon, 26 Dec 2022 05:21:23 GMT] [INFO]: Starting server...
+[Mon, 26 Dec 2022 05:21:23 GMT] [INFO]: Server started
+[Mon, 26 Dec 2022 05:21:25 GMT] [INFO]: 127.0.0.1 connected
+[Mon, 26 Dec 2022 05:21:29 GMT] [INCOMING]: 127.0.0.1 executed ["login","user1","pass1"]
+[Mon, 26 Dec 2022 05:21:29 GMT] [OUTGOING]: user1 response {"status":202,"comment":"","content":{}}
+[Mon, 26 Dec 2022 05:21:31 GMT] [INCOMING]: user1 executed ["unread","0"]
+[Mon, 26 Dec 2022 05:21:31 GMT] [OUTGOING]: user1 response {"status":200,"comment":"","content":{}}
+[Mon, 26 Dec 2022 05:21:40 GMT] [INCOMING]: user1 executed ["list","conversations"]
+[Mon, 26 Dec 2022 05:21:40 GMT] [OUTGOING]: user1 response {"status":200,"comment":"","content":{"conversations":[{"id":0,"unread":true,"users":["user1","user2"]},{"id":1,"unread":false,"users":["user1","user3"]}]}}
+[Mon, 26 Dec 2022 05:22:03 GMT] [INCOMING]: user1 executed ["test"]
+[Mon, 26 Dec 2022 05:22:03 GMT] [OUTGOING]: user1 response {"status":400,"comment":"","content":{}}
+[Mon, 26 Dec 2022 05:22:18 GMT] [INCOMING]: user1 executed ["list","messages","0"]
+[Mon, 26 Dec 2022 05:22:18 GMT] [OUTGOING]: user1 response {"status":400,"comment":"","content":{"messages":[{"id":15,"time":"Mon, 26 Dec 2022 04:21:51 GMT","executor":"user1","action":"MESSAGE","target":15,"content":"test message"},{"id":14,"time":"Sun, 25 Dec 2022 23:58:10 GMT","executor":"user1","action":"MESSAGE","target":14,"content":"hello"},{"id":13,"time":"Sat, 11 Jun 2022 21:52:01 GMT","executor":"user1","action":"MESSAGE","target":13,"content":"what's up"},{"id":12,"time":"Sat, 11 Jun 2022 21:52:01 GMT","executor":"user1","action":"READ","target":11,"content":null},{"id":11,"time":"Sat, 11 Jun 2022 21:51:48 GMT","executor":"user2","action":"MESSAGE","target":11,"content":"hi"},{"id":10,"time":"Sat, 11 Jun 2022 21:50:35 GMT","executor":"user2","action":"READ","target":9,"content":null},{"id":9,"time":"Sat, 11 Jun 2022 21:49:58 GMT","executor":"user1","action":"MESSAGE","target":9,"content":"hello"},{"id":8,"time":"Sat, 11 Jun 2022 20:14:16 GMT","executor":"user2","action":"MESSAGE","target":8,"content":"hi"},{"id":7,"time":"Sat, 11 Jun 2022 20:14:15 GMT","executor":"user2","action":"READ","target":6,"content":null},{"id":6,"time":"Sat, 11 Jun 2022 20:14:01 GMT","executor":"user2","action":"READ","target":5,"content":null},{"id":5,"time":"Sat, 11 Jun 2022 20:13:25 GMT","executor":"user1","action":"MESSAGE","target":5,"content":"hey"},{"id":4,"time":"Sat, 11 Jun 2022 20:13:25 GMT","executor":"user1","action":"READ","target":3,"content":null},{"id":3,"time":"Sat, 11 Jun 2022 19:54:15 GMT","executor":"user2","action":"MESSAGE","target":3,"content":"hi"},{"id":2,"time":"Sat, 11 Jun 2022 19:54:02 GMT","executor":"user1","action":"MESSAGE","target":2,"content":"test"},{"id":1,"time":"Sat, 11 Jun 2022 19:53:05 GMT","executor":"user1","action":"MESSAGE","target":1,"content":"test"},{"id":0,"time":"Sat, 11 Jun 2022 19:52:31 GMT","executor":"user1","action":"MESSAGE","target":0,"content":"test"}]}}
+[Mon, 26 Dec 2022 05:22:24 GMT] [INCOMING]: user1 executed ["list","conversations"]
+[Mon, 26 Dec 2022 05:22:24 GMT] [OUTGOING]: user1 response {"status":200,"comment":"","content":{"conversations":[{"id":0,"unread":true,"users":["user1","user2"]},{"id":1,"unread":false,"users":["user1","user3"]}]}}
+[Mon, 26 Dec 2022 05:25:00 GMT] [INFO]: user1 disconnected
+[Mon, 26 Dec 2022 05:25:01 GMT] [INFO]: 127.0.0.1 connected
+[Mon, 26 Dec 2022 05:25:08 GMT] [INCOMING]: 127.0.0.1 executed ["login","user1"]
+[Mon, 26 Dec 2022 05:25:08 GMT] [OUTGOING]: 127.0.0.1 response {"status":400,"comment":"","content":{}}
+[Mon, 26 Dec 2022 05:25:12 GMT] [INCOMING]: 127.0.0.1 executed ["login","user1","pass1"]
+[Mon, 26 Dec 2022 05:25:12 GMT] [OUTGOING]: user1 response {"status":202,"comment":"","content":{}}
+[Mon, 26 Dec 2022 05:25:17 GMT] [INCOMING]: user1 executed ["message","0","test"]
+[Mon, 26 Dec 2022 05:25:17 GMT] [OUTGOING]: user1 response {"status":200,"comment":"","content":{}}
+[Mon, 26 Dec 2022 05:25:24 GMT] [INFO]: user1 disconnected
+[Mon, 26 Dec 2022 05:25:27 GMT] [INFO]: 127.0.0.1 connected
+[Mon, 26 Dec 2022 05:25:29 GMT] [INCOMING]: 127.0.0.1 executed ["login","user2"]
+[Mon, 26 Dec 2022 05:25:29 GMT] [OUTGOING]: 127.0.0.1 response {"status":400,"comment":"","content":{}}
+[Mon, 26 Dec 2022 05:25:32 GMT] [INCOMING]: 127.0.0.1 executed ["login","user2","pass2"]
+[Mon, 26 Dec 2022 05:25:32 GMT] [OUTGOING]: user2 response {"status":202,"comment":"","content":{}}
+[Mon, 26 Dec 2022 05:25:32 GMT] [OUTGOING]: user2 response {"status":103,"comment":"Notification","content":{"conversation":"0","time":"Mon, 26 Dec 2022 05:25:17 GMT","executor":"user1","action":"MESSAGE"}}
+[Mon, 26 Dec 2022 05:25:37 GMT] [INCOMING]: user2 executed ["list","conversations"]
+[Mon, 26 Dec 2022 05:25:37 GMT] [OUTGOING]: user2 response {"status":200,"comment":"","content":{"conversations":[{"id":0,"unread":true,"users":["user1","user2"]}]}}
+[Mon, 26 Dec 2022 05:25:45 GMT] [INCOMING]: user2 executed ["list","messages","0"]
+[Mon, 26 Dec 2022 05:25:45 GMT] [OUTGOING]: user2 response {"status":400,"comment":"","content":{"messages":[{"id":16,"time":"Mon, 26 Dec 2022 05:25:17 GMT","executor":"user1","action":"MESSAGE","target":16,"content":"test"},{"id":15,"time":"Mon, 26 Dec 2022 04:21:51 GMT","executor":"user1","action":"MESSAGE","target":15,"content":"test message"},{"id":14,"time":"Sun, 25 Dec 2022 23:58:10 GMT","executor":"user1","action":"MESSAGE","target":14,"content":"hello"},{"id":13,"time":"Sat, 11 Jun 2022 21:52:01 GMT","executor":"user1","action":"MESSAGE","target":13,"content":"what's up"},{"id":12,"time":"Sat, 11 Jun 2022 21:52:01 GMT","executor":"user1","action":"READ","target":11,"content":null},{"id":11,"time":"Sat, 11 Jun 2022 21:51:48 GMT","executor":"user2","action":"MESSAGE","target":11,"content":"hi"},{"id":10,"time":"Sat, 11 Jun 2022 21:50:35 GMT","executor":"user2","action":"READ","target":9,"content":null},{"id":9,"time":"Sat, 11 Jun 2022 21:49:58 GMT","executor":"user1","action":"MESSAGE","target":9,"content":"hello"},{"id":8,"time":"Sat, 11 Jun 2022 20:14:16 GMT","executor":"user2","action":"MESSAGE","target":8,"content":"hi"},{"id":7,"time":"Sat, 11 Jun 2022 20:14:15 GMT","executor":"user2","action":"READ","target":6,"content":null},{"id":6,"time":"Sat, 11 Jun 2022 20:14:01 GMT","executor":"user2","action":"READ","target":5,"content":null},{"id":5,"time":"Sat, 11 Jun 2022 20:13:25 GMT","executor":"user1","action":"MESSAGE","target":5,"content":"hey"},{"id":4,"time":"Sat, 11 Jun 2022 20:13:25 GMT","executor":"user1","action":"READ","target":3,"content":null},{"id":3,"time":"Sat, 11 Jun 2022 19:54:15 GMT","executor":"user2","action":"MESSAGE","target":3,"content":"hi"},{"id":2,"time":"Sat, 11 Jun 2022 19:54:02 GMT","executor":"user1","action":"MESSAGE","target":2,"content":"test"},{"id":1,"time":"Sat, 11 Jun 2022 19:53:05 GMT","executor":"user1","action":"MESSAGE","target":1,"content":"test"},{"id":0,"time":"Sat, 11 Jun 2022 19:52:31 GMT","executor":"user1","action":"MESSAGE","target":0,"content":"test"}]}}
+[Mon, 26 Dec 2022 05:25:59 GMT] [INCOMING]: user2 executed ["list","conversations"]
+[Mon, 26 Dec 2022 05:25:59 GMT] [OUTGOING]: user2 response {"status":200,"comment":"","content":{"conversations":[{"id":0,"unread":false,"users":["user1","user2"]}]}}
+[Mon, 26 Dec 2022 05:26:03 GMT] [INFO]: user2 disconnected
+[Mon, 26 Dec 2022 05:26:06 GMT] [INFO]: 127.0.0.1 connected
+[Mon, 26 Dec 2022 05:26:11 GMT] [INCOMING]: 127.0.0.1 executed ["login","user1"]
+[Mon, 26 Dec 2022 05:26:11 GMT] [OUTGOING]: 127.0.0.1 response {"status":400,"comment":"","content":{}}
+[Mon, 26 Dec 2022 05:26:13 GMT] [INCOMING]: 127.0.0.1 executed ["login","user1","pass1"]
+[Mon, 26 Dec 2022 05:26:13 GMT] [OUTGOING]: user1 response {"status":202,"comment":"","content":{}}
+[Mon, 26 Dec 2022 05:26:13 GMT] [OUTGOING]: user1 response {"status":103,"comment":"Notification","content":{"conversation":"0","time":"Mon, 26 Dec 2022 05:25:45 GMT","executor":"user2","action":"READ"}}
+[Mon, 26 Dec 2022 05:26:17 GMT] [INCOMING]: user1 executed ["list","conversations"]
+[Mon, 26 Dec 2022 05:26:17 GMT] [OUTGOING]: user1 response {"status":200,"comment":"","content":{"conversations":[{"id":0,"unread":true,"users":["user1","user2"]},{"id":1,"unread":false,"users":["user1","user3"]}]}}
+[Mon, 26 Dec 2022 05:26:26 GMT] [INCOMING]: user1 executed ["list","messages","0"]
+[Mon, 26 Dec 2022 05:26:26 GMT] [OUTGOING]: user1 response {"status":400,"comment":"","content":{"messages":[{"id":16,"time":"Mon, 26 Dec 2022 05:25:17 GMT","executor":"user1","action":"MESSAGE","target":16,"content":"test"},{"id":15,"time":"Mon, 26 Dec 2022 04:21:51 GMT","executor":"user1","action":"MESSAGE","target":15,"content":"test message"},{"id":14,"time":"Sun, 25 Dec 2022 23:58:10 GMT","executor":"user1","action":"MESSAGE","target":14,"content":"hello"},{"id":13,"time":"Sat, 11 Jun 2022 21:52:01 GMT","executor":"user1","action":"MESSAGE","target":13,"content":"what's up"},{"id":12,"time":"Sat, 11 Jun 2022 21:52:01 GMT","executor":"user1","action":"READ","target":11,"content":null},{"id":11,"time":"Sat, 11 Jun 2022 21:51:48 GMT","executor":"user2","action":"MESSAGE","target":11,"content":"hi"},{"id":10,"time":"Sat, 11 Jun 2022 21:50:35 GMT","executor":"user2","action":"READ","target":9,"content":null},{"id":9,"time":"Sat, 11 Jun 2022 21:49:58 GMT","executor":"user1","action":"MESSAGE","target":9,"content":"hello"},{"id":8,"time":"Sat, 11 Jun 2022 20:14:16 GMT","executor":"user2","action":"MESSAGE","target":8,"content":"hi"},{"id":7,"time":"Sat, 11 Jun 2022 20:14:15 GMT","executor":"user2","action":"READ","target":6,"content":null},{"id":6,"time":"Sat, 11 Jun 2022 20:14:01 GMT","executor":"user2","action":"READ","target":5,"content":null},{"id":5,"time":"Sat, 11 Jun 2022 20:13:25 GMT","executor":"user1","action":"MESSAGE","target":5,"content":"hey"},{"id":4,"time":"Sat, 11 Jun 2022 20:13:25 GMT","executor":"user1","action":"READ","target":3,"content":null},{"id":3,"time":"Sat, 11 Jun 2022 19:54:15 GMT","executor":"user2","action":"MESSAGE","target":3,"content":"hi"},{"id":2,"time":"Sat, 11 Jun 2022 19:54:02 GMT","executor":"user1","action":"MESSAGE","target":2,"content":"test"},{"id":1,"time":"Sat, 11 Jun 2022 19:53:05 GMT","executor":"user1","action":"MESSAGE","target":1,"content":"test"},{"id":0,"time":"Sat, 11 Jun 2022 19:52:31 GMT","executor":"user1","action":"MESSAGE","target":0,"content":"test"}]}}
+[Mon, 26 Dec 2022 05:26:30 GMT] [INCOMING]: user1 executed ["list","conversations"]
+[Mon, 26 Dec 2022 05:26:30 GMT] [OUTGOING]: user1 response {"status":200,"comment":"","content":{"conversations":[{"id":0,"unread":false,"users":["user1","user2"]},{"id":1,"unread":false,"users":["user1","user3"]}]}}
+[Mon, 26 Dec 2022 05:26:40 GMT] [INCOMING]: user1 executed ["unread","0"]
+[Mon, 26 Dec 2022 05:26:40 GMT] [OUTGOING]: user1 response {"status":200,"comment":"","content":{}}
+[Mon, 26 Dec 2022 05:26:47 GMT] [INCOMING]: user1 executed ["list","conversations"]
+[Mon, 26 Dec 2022 05:26:47 GMT] [OUTGOING]: user1 response {"status":200,"comment":"","content":{"conversations":[{"id":0,"unread":true,"users":["user1","user2"]},{"id":1,"unread":false,"users":["user1","user3"]}]}}
+[Mon, 26 Dec 2022 05:26:50 GMT] [INCOMING]: user1 executed ["list","messages","0"]
+[Mon, 26 Dec 2022 05:26:50 GMT] [OUTGOING]: user1 response {"status":400,"comment":"","content":{"messages":[{"id":16,"time":"Mon, 26 Dec 2022 05:25:17 GMT","executor":"user1","action":"MESSAGE","target":16,"content":"test"},{"id":15,"time":"Mon, 26 Dec 2022 04:21:51 GMT","executor":"user1","action":"MESSAGE","target":15,"content":"test message"},{"id":14,"time":"Sun, 25 Dec 2022 23:58:10 GMT","executor":"user1","action":"MESSAGE","target":14,"content":"hello"},{"id":13,"time":"Sat, 11 Jun 2022 21:52:01 GMT","executor":"user1","action":"MESSAGE","target":13,"content":"what's up"},{"id":12,"time":"Sat, 11 Jun 2022 21:52:01 GMT","executor":"user1","action":"READ","target":11,"content":null},{"id":11,"time":"Sat, 11 Jun 2022 21:51:48 GMT","executor":"user2","action":"MESSAGE","target":11,"content":"hi"},{"id":10,"time":"Sat, 11 Jun 2022 21:50:35 GMT","executor":"user2","action":"READ","target":9,"content":null},{"id":9,"time":"Sat, 11 Jun 2022 21:49:58 GMT","executor":"user1","action":"MESSAGE","target":9,"content":"hello"},{"id":8,"time":"Sat, 11 Jun 2022 20:14:16 GMT","executor":"user2","action":"MESSAGE","target":8,"content":"hi"},{"id":7,"time":"Sat, 11 Jun 2022 20:14:15 GMT","executor":"user2","action":"READ","target":6,"content":null},{"id":6,"time":"Sat, 11 Jun 2022 20:14:01 GMT","executor":"user2","action":"READ","target":5,"content":null},{"id":5,"time":"Sat, 11 Jun 2022 20:13:25 GMT","executor":"user1","action":"MESSAGE","target":5,"content":"hey"},{"id":4,"time":"Sat, 11 Jun 2022 20:13:25 GMT","executor":"user1","action":"READ","target":3,"content":null},{"id":3,"time":"Sat, 11 Jun 2022 19:54:15 GMT","executor":"user2","action":"MESSAGE","target":3,"content":"hi"},{"id":2,"time":"Sat, 11 Jun 2022 19:54:02 GMT","executor":"user1","action":"MESSAGE","target":2,"content":"test"},{"id":1,"time":"Sat, 11 Jun 2022 19:53:05 GMT","executor":"user1","action":"MESSAGE","target":1,"content":"test"},{"id":0,"time":"Sat, 11 Jun 2022 19:52:31 GMT","executor":"user1","action":"MESSAGE","target":0,"content":"test"}]}}
+[Mon, 26 Dec 2022 05:26:51 GMT] [INCOMING]: user1 executed ["list","conversations"]
+[Mon, 26 Dec 2022 05:26:51 GMT] [OUTGOING]: user1 response {"status":200,"comment":"","content":{"conversations":[{"id":0,"unread":true,"users":["user1","user2"]},{"id":1,"unread":false,"users":["user1","user3"]}]}}
+[Mon, 26 Dec 2022 05:26:59 GMT] [INCOMING]: user1 executed ["list","messages","0"]
+[Mon, 26 Dec 2022 05:26:59 GMT] [OUTGOING]: user1 response {"status":400,"comment":"","content":{"messages":[{"id":16,"time":"Mon, 26 Dec 2022 05:25:17 GMT","executor":"user1","action":"MESSAGE","target":16,"content":"test"},{"id":15,"time":"Mon, 26 Dec 2022 04:21:51 GMT","executor":"user1","action":"MESSAGE","target":15,"content":"test message"},{"id":14,"time":"Sun, 25 Dec 2022 23:58:10 GMT","executor":"user1","action":"MESSAGE","target":14,"content":"hello"},{"id":13,"time":"Sat, 11 Jun 2022 21:52:01 GMT","executor":"user1","action":"MESSAGE","target":13,"content":"what's up"},{"id":12,"time":"Sat, 11 Jun 2022 21:52:01 GMT","executor":"user1","action":"READ","target":11,"content":null},{"id":11,"time":"Sat, 11 Jun 2022 21:51:48 GMT","executor":"user2","action":"MESSAGE","target":11,"content":"hi"},{"id":10,"time":"Sat, 11 Jun 2022 21:50:35 GMT","executor":"user2","action":"READ","target":9,"content":null},{"id":9,"time":"Sat, 11 Jun 2022 21:49:58 GMT","executor":"user1","action":"MESSAGE","target":9,"content":"hello"},{"id":8,"time":"Sat, 11 Jun 2022 20:14:16 GMT","executor":"user2","action":"MESSAGE","target":8,"content":"hi"},{"id":7,"time":"Sat, 11 Jun 2022 20:14:15 GMT","executor":"user2","action":"READ","target":6,"content":null},{"id":6,"time":"Sat, 11 Jun 2022 20:14:01 GMT","executor":"user2","action":"READ","target":5,"content":null},{"id":5,"time":"Sat, 11 Jun 2022 20:13:25 GMT","executor":"user1","action":"MESSAGE","target":5,"content":"hey"},{"id":4,"time":"Sat, 11 Jun 2022 20:13:25 GMT","executor":"user1","action":"READ","target":3,"content":null},{"id":3,"time":"Sat, 11 Jun 2022 19:54:15 GMT","executor":"user2","action":"MESSAGE","target":3,"content":"hi"},{"id":2,"time":"Sat, 11 Jun 2022 19:54:02 GMT","executor":"user1","action":"MESSAGE","target":2,"content":"test"},{"id":1,"time":"Sat, 11 Jun 2022 19:53:05 GMT","executor":"user1","action":"MESSAGE","target":1,"content":"test"},{"id":0,"time":"Sat, 11 Jun 2022 19:52:31 GMT","executor":"user1","action":"MESSAGE","target":0,"content":"test"}]}}
+[Mon, 26 Dec 2022 05:27:08 GMT] [INCOMING]: user1 executed ["list","conversations"]
+[Mon, 26 Dec 2022 05:27:08 GMT] [OUTGOING]: user1 response {"status":200,"comment":"","content":{"conversations":[{"id":0,"unread":true,"users":["user1","user2"]},{"id":1,"unread":false,"users":["user1","user3"]}]}}
+[Mon, 26 Dec 2022 05:27:10 GMT] [INFO]: user1 disconnected
+[Mon, 26 Dec 2022 05:27:16 GMT] [INFO]: 127.0.0.1 connected
+[Mon, 26 Dec 2022 05:27:20 GMT] [INCOMING]: 127.0.0.1 executed ["login","user1","pass1"]
+[Mon, 26 Dec 2022 05:27:20 GMT] [OUTGOING]: user1 response {"status":202,"comment":"","content":{}}
+[Mon, 26 Dec 2022 05:27:30 GMT] [INCOMING]: user1 executed ["list","conversations"]
+[Mon, 26 Dec 2022 05:27:30 GMT] [OUTGOING]: user1 response {"status":200,"comment":"","content":{"conversations":[{"id":0,"unread":true,"users":["user1","user2"]},{"id":1,"unread":false,"users":["user1","user3"]}]}}
+[Mon, 26 Dec 2022 05:27:33 GMT] [INCOMING]: user1 executed ["list","messages","0"]
+[Mon, 26 Dec 2022 05:27:33 GMT] [OUTGOING]: user1 response {"status":400,"comment":"","content":{"messages":[{"id":16,"time":"Mon, 26 Dec 2022 05:25:17 GMT","executor":"user1","action":"MESSAGE","target":16,"content":"test"},{"id":15,"time":"Mon, 26 Dec 2022 04:21:51 GMT","executor":"user1","action":"MESSAGE","target":15,"content":"test message"},{"id":14,"time":"Sun, 25 Dec 2022 23:58:10 GMT","executor":"user1","action":"MESSAGE","target":14,"content":"hello"},{"id":13,"time":"Sat, 11 Jun 2022 21:52:01 GMT","executor":"user1","action":"MESSAGE","target":13,"content":"what's up"},{"id":12,"time":"Sat, 11 Jun 2022 21:52:01 GMT","executor":"user1","action":"READ","target":11,"content":null},{"id":11,"time":"Sat, 11 Jun 2022 21:51:48 GMT","executor":"user2","action":"MESSAGE","target":11,"content":"hi"},{"id":10,"time":"Sat, 11 Jun 2022 21:50:35 GMT","executor":"user2","action":"READ","target":9,"content":null},{"id":9,"time":"Sat, 11 Jun 2022 21:49:58 GMT","executor":"user1","action":"MESSAGE","target":9,"content":"hello"},{"id":8,"time":"Sat, 11 Jun 2022 20:14:16 GMT","executor":"user2","action":"MESSAGE","target":8,"content":"hi"},{"id":7,"time":"Sat, 11 Jun 2022 20:14:15 GMT","executor":"user2","action":"READ","target":6,"content":null},{"id":6,"time":"Sat, 11 Jun 2022 20:14:01 GMT","executor":"user2","action":"READ","target":5,"content":null},{"id":5,"time":"Sat, 11 Jun 2022 20:13:25 GMT","executor":"user1","action":"MESSAGE","target":5,"content":"hey"},{"id":4,"time":"Sat, 11 Jun 2022 20:13:25 GMT","executor":"user1","action":"READ","target":3,"content":null},{"id":3,"time":"Sat, 11 Jun 2022 19:54:15 GMT","executor":"user2","action":"MESSAGE","target":3,"content":"hi"},{"id":2,"time":"Sat, 11 Jun 2022 19:54:02 GMT","executor":"user1","action":"MESSAGE","target":2,"content":"test"},{"id":1,"time":"Sat, 11 Jun 2022 19:53:05 GMT","executor":"user1","action":"MESSAGE","target":1,"content":"test"},{"id":0,"time":"Sat, 11 Jun 2022 19:52:31 GMT","executor":"user1","action":"MESSAGE","target":0,"content":"test"}]}}
+[Mon, 26 Dec 2022 05:27:36 GMT] [INCOMING]: user1 executed ["list","conversations"]
+[Mon, 26 Dec 2022 05:27:36 GMT] [OUTGOING]: user1 response {"status":200,"comment":"","content":{"conversations":[{"id":0,"unread":true,"users":["user1","user2"]},{"id":1,"unread":false,"users":["user1","user3"]}]}}
+[Mon, 26 Dec 2022 05:28:29 GMT] [INFO]: Server stopped
+[Mon, 26 Dec 2022 05:28:30 GMT] [INFO]: Starting server...
+[Mon, 26 Dec 2022 05:28:30 GMT] [INFO]: Server started
+[Mon, 26 Dec 2022 05:28:32 GMT] [INFO]: 127.0.0.1 connected
+[Mon, 26 Dec 2022 05:28:37 GMT] [INCOMING]: 127.0.0.1 executed ["login","user1","pass1"]
+[Mon, 26 Dec 2022 05:28:37 GMT] [OUTGOING]: user1 response {"status":202,"comment":"","content":{}}
+[Mon, 26 Dec 2022 05:28:41 GMT] [INCOMING]: user1 executed ["list","conversations"]
+[Mon, 26 Dec 2022 05:28:41 GMT] [OUTGOING]: user1 response {"status":200,"comment":"","content":{"conversations":[{"id":0,"unread":true,"users":["user1","user2"]},{"id":1,"unread":false,"users":["user1","user3"]}]}}
+[Mon, 26 Dec 2022 05:28:46 GMT] [INCOMING]: user1 executed ["list","messages","0"]
+[Mon, 26 Dec 2022 05:28:46 GMT] [OUTGOING]: user1 response {"status":400,"comment":"","content":{"messages":[{"id":16,"time":"Mon, 26 Dec 2022 05:25:17 GMT","executor":"user1","action":"MESSAGE","target":16,"content":"test"},{"id":15,"time":"Mon, 26 Dec 2022 04:21:51 GMT","executor":"user1","action":"MESSAGE","target":15,"content":"test message"},{"id":14,"time":"Sun, 25 Dec 2022 23:58:10 GMT","executor":"user1","action":"MESSAGE","target":14,"content":"hello"},{"id":13,"time":"Sat, 11 Jun 2022 21:52:01 GMT","executor":"user1","action":"MESSAGE","target":13,"content":"what's up"},{"id":12,"time":"Sat, 11 Jun 2022 21:52:01 GMT","executor":"user1","action":"READ","target":11,"content":null},{"id":11,"time":"Sat, 11 Jun 2022 21:51:48 GMT","executor":"user2","action":"MESSAGE","target":11,"content":"hi"},{"id":10,"time":"Sat, 11 Jun 2022 21:50:35 GMT","executor":"user2","action":"READ","target":9,"content":null},{"id":9,"time":"Sat, 11 Jun 2022 21:49:58 GMT","executor":"user1","action":"MESSAGE","target":9,"content":"hello"},{"id":8,"time":"Sat, 11 Jun 2022 20:14:16 GMT","executor":"user2","action":"MESSAGE","target":8,"content":"hi"},{"id":7,"time":"Sat, 11 Jun 2022 20:14:15 GMT","executor":"user2","action":"READ","target":6,"content":null},{"id":6,"time":"Sat, 11 Jun 2022 20:14:01 GMT","executor":"user2","action":"READ","target":5,"content":null},{"id":5,"time":"Sat, 11 Jun 2022 20:13:25 GMT","executor":"user1","action":"MESSAGE","target":5,"content":"hey"},{"id":4,"time":"Sat, 11 Jun 2022 20:13:25 GMT","executor":"user1","action":"READ","target":3,"content":null},{"id":3,"time":"Sat, 11 Jun 2022 19:54:15 GMT","executor":"user2","action":"MESSAGE","target":3,"content":"hi"},{"id":2,"time":"Sat, 11 Jun 2022 19:54:02 GMT","executor":"user1","action":"MESSAGE","target":2,"content":"test"},{"id":1,"time":"Sat, 11 Jun 2022 19:53:05 GMT","executor":"user1","action":"MESSAGE","target":1,"content":"test"},{"id":0,"time":"Sat, 11 Jun 2022 19:52:31 GMT","executor":"user1","action":"MESSAGE","target":0,"content":"test"}]}}
+[Mon, 26 Dec 2022 05:28:49 GMT] [INCOMING]: user1 executed ["list","conversations"]
+[Mon, 26 Dec 2022 05:28:49 GMT] [OUTGOING]: user1 response {"status":200,"comment":"","content":{"conversations":[{"id":0,"unread":false,"users":["user1","user2"]},{"id":1,"unread":false,"users":["user1","user3"]}]}}
+[Mon, 26 Dec 2022 05:28:52 GMT] [INCOMING]: user1 executed ["unread","0"]
+[Mon, 26 Dec 2022 05:28:52 GMT] [OUTGOING]: user1 response {"status":200,"comment":"","content":{}}
+[Mon, 26 Dec 2022 05:28:53 GMT] [INCOMING]: user1 executed ["list","conversations"]
+[Mon, 26 Dec 2022 05:28:53 GMT] [OUTGOING]: user1 response {"status":200,"comment":"","content":{"conversations":[{"id":0,"unread":true,"users":["user1","user2"]},{"id":1,"unread":false,"users":["user1","user3"]}]}}
+[Mon, 26 Dec 2022 05:28:56 GMT] [INCOMING]: user1 executed ["list","messages","0"]
+[Mon, 26 Dec 2022 05:28:56 GMT] [OUTGOING]: user1 response {"status":400,"comment":"","content":{"messages":[{"id":16,"time":"Mon, 26 Dec 2022 05:25:17 GMT","executor":"user1","action":"MESSAGE","target":16,"content":"test"},{"id":15,"time":"Mon, 26 Dec 2022 04:21:51 GMT","executor":"user1","action":"MESSAGE","target":15,"content":"test message"},{"id":14,"time":"Sun, 25 Dec 2022 23:58:10 GMT","executor":"user1","action":"MESSAGE","target":14,"content":"hello"},{"id":13,"time":"Sat, 11 Jun 2022 21:52:01 GMT","executor":"user1","action":"MESSAGE","target":13,"content":"what's up"},{"id":12,"time":"Sat, 11 Jun 2022 21:52:01 GMT","executor":"user1","action":"READ","target":11,"content":null},{"id":11,"time":"Sat, 11 Jun 2022 21:51:48 GMT","executor":"user2","action":"MESSAGE","target":11,"content":"hi"},{"id":10,"time":"Sat, 11 Jun 2022 21:50:35 GMT","executor":"user2","action":"READ","target":9,"content":null},{"id":9,"time":"Sat, 11 Jun 2022 21:49:58 GMT","executor":"user1","action":"MESSAGE","target":9,"content":"hello"},{"id":8,"time":"Sat, 11 Jun 2022 20:14:16 GMT","executor":"user2","action":"MESSAGE","target":8,"content":"hi"},{"id":7,"time":"Sat, 11 Jun 2022 20:14:15 GMT","executor":"user2","action":"READ","target":6,"content":null},{"id":6,"time":"Sat, 11 Jun 2022 20:14:01 GMT","executor":"user2","action":"READ","target":5,"content":null},{"id":5,"time":"Sat, 11 Jun 2022 20:13:25 GMT","executor":"user1","action":"MESSAGE","target":5,"content":"hey"},{"id":4,"time":"Sat, 11 Jun 2022 20:13:25 GMT","executor":"user1","action":"READ","target":3,"content":null},{"id":3,"time":"Sat, 11 Jun 2022 19:54:15 GMT","executor":"user2","action":"MESSAGE","target":3,"content":"hi"},{"id":2,"time":"Sat, 11 Jun 2022 19:54:02 GMT","executor":"user1","action":"MESSAGE","target":2,"content":"test"},{"id":1,"time":"Sat, 11 Jun 2022 19:53:05 GMT","executor":"user1","action":"MESSAGE","target":1,"content":"test"},{"id":0,"time":"Sat, 11 Jun 2022 19:52:31 GMT","executor":"user1","action":"MESSAGE","target":0,"content":"test"}]}}
+[Mon, 26 Dec 2022 05:28:58 GMT] [INCOMING]: user1 executed ["list","conversations"]
+[Mon, 26 Dec 2022 05:28:58 GMT] [OUTGOING]: user1 response {"status":200,"comment":"","content":{"conversations":[{"id":0,"unread":false,"users":["user1","user2"]},{"id":1,"unread":false,"users":["user1","user3"]}]}}
+[Mon, 26 Dec 2022 05:29:26 GMT] [INFO]: user1 disconnected
